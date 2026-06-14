@@ -1,0 +1,146 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Services" description="Hair, colour, and spa services at Raffaello Salon, Yorkville Toronto since 1968.">
+
+  <div class="page-header dark-section">
+    <div class="container">
+      <span class="eyebrow reveal">132 Cumberland Street</span>
+      <h1 class="reveal reveal-delay-1">The Services.</h1>
+    </div>
+  </div>
+
+  <section id="hair" class="service-section light-section">
+    <div class="container service-layout">
+      <div class="service-text reveal">
+        <span class="eyebrow">Hair &amp; Style</span>
+        <span class="rule"></span>
+        <h2>The Cut.</h2>
+        <p class="service-director">Christopher Marrello, Creative Director</p>
+        <p>Every haircut at Raffaello is performed by a senior stylist. No training. No assistants. The person who consults is the person who cuts.</p>
+        <ul class="service-list">
+          <li>Women&apos;s Haircut &amp; Style</li>
+          <li>Men&apos;s Haircut &amp; Style</li>
+          <li>Blowout &amp; Styling</li>
+          <li>Keratin Treatments</li>
+          <li>Up-do &amp; Special Occasion</li>
+          <li>Bridal Styling</li>
+        </ul>
+        <a href="/contact" class="btn btn-dark">Book an Appointment</a>
+      </div>
+      <div class="service-image reveal reveal-delay-1">
+        <img
+          src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=800&q=80&auto=format&fit=crop"
+          alt="Hair cutting at Raffaello Salon"
+          class="img-portrait"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section id="colour" class="service-section">
+    <div class="container service-layout service-layout--reverse">
+      <div class="service-image reveal">
+        <img
+          src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80&auto=format&fit=crop"
+          alt="Colour work at Raffaello Salon"
+          class="img-portrait"
+          loading="lazy"
+        />
+      </div>
+      <div class="service-text reveal reveal-delay-1">
+        <span class="eyebrow">Colour</span>
+        <span class="rule"></span>
+        <h2>The Colour.</h2>
+        <p class="service-director">Mellissa Marrello, Colour Director</p>
+        <p>Corrective colour, precision balayage, and colour work that holds. Mellissa Marrello built her career on getting colour right the first time.</p>
+        <ul class="service-list">
+          <li>Balayage &amp; Ombré</li>
+          <li>Highlights &amp; Lowlights</li>
+          <li>Corrective Colour</li>
+          <li>Full Colour</li>
+          <li>Gloss &amp; Toning</li>
+          <li>Colour Consultation</li>
+        </ul>
+        <a href="/contact" class="btn btn-dark">Book an Appointment</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="spa" class="service-section light-section">
+    <div class="container service-layout">
+      <div class="service-text reveal">
+        <span class="eyebrow">Spa</span>
+        <span class="rule"></span>
+        <h2>The Spa.</h2>
+        <p>Full-service spa treatments at the same location as your hair appointment. One visit. Complete care.</p>
+        <ul class="service-list">
+          <li>Facials</li>
+          <li>Dermaplaning</li>
+          <li>Oxygen Treatments</li>
+          <li>Microcurrent Lifts</li>
+          <li>Waxing</li>
+          <li>Manicures &amp; Pedicures</li>
+        </ul>
+        <a href="/contact" class="btn btn-dark">Book an Appointment</a>
+      </div>
+      <div class="service-image reveal reveal-delay-1">
+        <img
+          src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&q=80&auto=format&fit=crop"
+          alt="Spa services"
+          class="img-portrait"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  .page-header { padding: 10rem 0 5rem; }
+  .page-header .eyebrow { color: var(--stone); margin-bottom: 1.5rem; display: block; }
+  .page-header h1 { color: var(--parchment); }
+
+  .service-section { }
+  .service-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+  .service-layout--reverse { }
+  .service-layout--reverse .service-image { order: -1; }
+
+  .service-text .eyebrow { margin-bottom: 1rem; display: block; }
+  .service-text .rule { margin-bottom: 1.5rem; }
+  .service-text h2 { margin-bottom: 0.5rem; }
+  .service-director {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.125rem;
+    color: var(--stone);
+    margin-bottom: 1.5rem;
+    max-width: none;
+  }
+  .service-text p { color: rgba(26,26,26,0.7); margin-bottom: 2rem; font-size: 0.95rem; }
+  .service-list {
+    list-style: none;
+    margin-bottom: 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .service-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    font-size: 0.875rem;
+    color: var(--salon-black);
+  }
+  @media (max-width: 768px) {
+    .service-layout, .service-layout--reverse { grid-template-columns: 1fr; gap: 2.5rem; }
+    .service-layout--reverse .service-image { order: 0; }
+    .service-list { grid-template-columns: 1fr; }
+  }
+</style>

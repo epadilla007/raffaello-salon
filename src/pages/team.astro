@@ -1,0 +1,125 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="The Team" description="Meet Raffaello, Christopher, and Mellissa Marrello — three generations behind Yorkville&apos;s original salon.">
+
+  <div class="page-header dark-section">
+    <div class="container">
+      <span class="eyebrow reveal">Since 1968</span>
+      <h1 class="reveal reveal-delay-1">The Team.</h1>
+      <p class="header-sub reveal reveal-delay-2">Three generations. One family. No junior stylists.</p>
+    </div>
+  </div>
+
+  <section class="team-section">
+    <div class="container">
+
+      <article class="team-profile reveal">
+        <div class="profile-image">
+          <img
+            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80&auto=format&fit=crop&crop=face"
+            alt="Raffaello Marrello, Founder"
+            class="img-portrait"
+            loading="lazy"
+          />
+        </div>
+        <div class="profile-text">
+          <span class="eyebrow">Founder</span>
+          <h2>Raffaello Marrello</h2>
+          <p class="profile-year">Since 1968</p>
+          <p>Raffaello Marrello opened the salon in 1968 in Yorkville, Toronto. He built it on one principle: when you understand people, hairstyles become unlimited. He is still behind the chair.</p>
+          <p>Over five decades in the same neighbourhood. The same address. The same standard. The work does not need explaining.</p>
+          <blockquote class="profile-quote">
+            &ldquo;When you do styles you limit yourself to some people, when you do people hairstyles are unlimited.&rdquo;
+          </blockquote>
+        </div>
+      </article>
+
+      <article class="team-profile reveal">
+        <div class="profile-image">
+          <img
+            src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80&auto=format&fit=crop&crop=face"
+            alt="Christopher Marrello, Creative Director"
+            class="img-portrait"
+            loading="lazy"
+          />
+        </div>
+        <div class="profile-text">
+          <span class="eyebrow">Creative Director</span>
+          <h2>Christopher Marrello</h2>
+          <p class="profile-year">Raffaello&apos;s son</p>
+          <p>Christopher Marrello is the Creative Director at Raffaello Salon. He has worked on international stages and editorial shoots. He brought those references back to Cumberland Street.</p>
+          <p>Every haircut in the salon reflects the standard Christopher holds. Precision. No shortcuts. The same discipline that has kept Raffaello in Yorkville for over 50 years.</p>
+        </div>
+      </article>
+
+      <article class="team-profile reveal">
+        <div class="profile-image">
+          <img
+            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&q=80&auto=format&fit=crop&crop=face"
+            alt="Mellissa Marrello, Colour Director"
+            class="img-portrait"
+            loading="lazy"
+          />
+        </div>
+        <div class="profile-text">
+          <span class="eyebrow">Colour Director</span>
+          <h2>Mellissa Marrello</h2>
+          <p class="profile-year">Colour specialist</p>
+          <p>Mellissa Marrello is the Colour Director at Raffaello Salon. She specializes in corrective colour and precision balayage. Clients come to Mellissa when the colour has to be right the first time.</p>
+          <p>Her work includes balayage, ombré, highlights, lowlights, and colour correction. When the colour needs fixing, Mellissa is who Yorkville calls.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="team-cta dark-section">
+    <div class="container">
+      <h2 class="reveal">Book an appointment<br />with the team.</h2>
+      <a href="/contact" class="btn btn-primary reveal reveal-delay-1">Book Your Appointment</a>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  .page-header { padding: 10rem 0 5rem; }
+  .page-header .eyebrow { color: var(--stone); display: block; margin-bottom: 1.5rem; }
+  .page-header h1 { color: var(--parchment); margin-bottom: 1rem; }
+  .header-sub { font-family: var(--font-display); font-style: italic; font-size: 1.25rem; color: var(--stone); max-width: none; }
+
+  .team-section { padding: clamp(4rem, 8vw, 7.5rem) 0; background: var(--parchment); }
+  .team-profile {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 6rem;
+    align-items: start;
+    padding-bottom: 6rem;
+    border-bottom: 1px solid rgba(26,26,26,0.08);
+    margin-bottom: 6rem;
+  }
+  .team-profile:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .profile-image img { max-width: 420px; }
+  .profile-text .eyebrow { margin-bottom: 0.75rem; display: block; }
+  .profile-text h2 { margin-bottom: 0.25rem; font-size: clamp(2rem, 3.5vw, 3rem); }
+  .profile-year { font-family: var(--font-display); font-style: italic; font-size: 1rem; color: var(--stone); margin-bottom: 2rem; max-width: none; }
+  .profile-text p { font-size: 0.95rem; color: rgba(26,26,26,0.7); margin-bottom: 1.25rem; }
+  .profile-quote {
+    margin-top: 2.5rem;
+    padding-left: 2rem;
+    border-left: 1px solid var(--stone);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.25rem;
+    color: var(--salon-black);
+    max-width: none;
+  }
+  @media (max-width: 768px) {
+    .team-profile { grid-template-columns: 1fr; gap: 2.5rem; }
+    .profile-image img { max-width: 100%; }
+  }
+
+  .team-cta { text-align: center; }
+  .team-cta h2 { color: var(--parchment); margin-bottom: 2.5rem; }
+</style>

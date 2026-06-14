@@ -1,0 +1,394 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Best Hair Salon in Yorkville" hasDarkHero={true}>
+
+  <!-- BEAT 1: HERO -->
+  <section class="hero dark-section">
+    <div class="hero-bg">
+      <img
+        src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=1600&q=80&auto=format&fit=crop"
+        alt="Raffaello Salon interior"
+        class="hero-img"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="container hero-content">
+      <span class="eyebrow hero-eyebrow reveal">Yorkville, Toronto</span>
+      <h1 class="hero-headline" id="hero-headline">Since 1968.</h1>
+      <p class="hero-sub reveal reveal-delay-1">
+        Yorkville&apos;s original salon.<br />
+        Raffaello. Christopher. Mellissa.
+      </p>
+      <div class="hero-actions reveal reveal-delay-2">
+        <a href="/contact" class="btn btn-primary">Book Your Appointment</a>
+        <a href="tel:4169290021" class="btn btn-outline">(416) 929-0021</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- BEAT 2: PHILOSOPHY -->
+  <section class="philosophy dark-section">
+    <div class="container philosophy-inner">
+      <div class="philosophy-quote reveal">
+        <span class="rule rule-stone"></span>
+        <blockquote>
+          &ldquo;When you do styles you limit yourself to some people,
+          when you do people hairstyles are unlimited.&rdquo;
+        </blockquote>
+        <cite>— Raffaello Marrello, Founder</cite>
+      </div>
+      <div class="philosophy-facts">
+        <div class="fact-item reveal">
+          <span class="fact-number">1968</span>
+          <p class="fact-label">Founded in Yorkville</p>
+        </div>
+        <div class="fact-item reveal reveal-delay-1">
+          <span class="fact-number">3</span>
+          <p class="fact-label">Generations of family craft</p>
+        </div>
+        <div class="fact-item reveal reveal-delay-2">
+          <span class="fact-number">0</span>
+          <p class="fact-label">Junior stylists. Every appointment is senior.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEAT 3: SERVICES -->
+  <section class="services-preview light-section">
+    <div class="container">
+      <span class="eyebrow reveal">The Work</span>
+      <h2 class="reveal reveal-delay-1">Three disciplines.<br />One standard.</h2>
+      <div class="services-grid">
+        <article class="service-card reveal">
+          <div class="service-image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=800&q=80&auto=format&fit=crop"
+              alt="Precision haircut"
+              class="img-portrait"
+              loading="lazy"
+            />
+          </div>
+          <div class="service-info">
+            <span class="eyebrow">Hair &amp; Style</span>
+            <h3>The Cut.</h3>
+            <p>Precision cutting and styling under Christopher Marrello, Creative Director. Haircuts, blowouts, and styling for all hair types.</p>
+            <a href="/services#hair" class="service-link">View Services →</a>
+          </div>
+        </article>
+        <article class="service-card reveal reveal-delay-1">
+          <div class="service-image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80&auto=format&fit=crop"
+              alt="Colour work"
+              class="img-portrait"
+              loading="lazy"
+            />
+          </div>
+          <div class="service-info">
+            <span class="eyebrow">Colour</span>
+            <h3>The Colour.</h3>
+            <p>Balayage, ombré, highlights, and corrective colour under Mellissa Marrello, Colour Director. Precision work that holds.</p>
+            <a href="/services#colour" class="service-link">View Services →</a>
+          </div>
+        </article>
+        <article class="service-card reveal reveal-delay-2">
+          <div class="service-image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&q=80&auto=format&fit=crop"
+              alt="Spa treatment"
+              class="img-portrait"
+              loading="lazy"
+            />
+          </div>
+          <div class="service-info">
+            <span class="eyebrow">Spa</span>
+            <h3>The Spa.</h3>
+            <p>Facials, dermaplaning, oxygen treatments, microcurrent lifts, waxing, manicures, and pedicures. One appointment, complete care.</p>
+            <a href="/services#spa" class="service-link">View Services →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEAT 4: TEAM -->
+  <section class="team-preview">
+    <div class="container">
+      <span class="eyebrow reveal">The Team</span>
+      <h2 class="reveal reveal-delay-1">Three generations.<br />One family.</h2>
+      <div class="team-grid">
+        <article class="team-member reveal">
+          <img
+            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80&auto=format&fit=crop&crop=face"
+            alt="Raffaello Marrello, Founder"
+            class="img-portrait"
+            loading="lazy"
+          />
+          <p class="eyebrow">Founder</p>
+          <h4>Raffaello Marrello</h4>
+          <p>The standard the team holds itself to. Over five decades in the craft. Still behind the chair.</p>
+        </article>
+        <article class="team-member reveal reveal-delay-1">
+          <img
+            src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&q=80&auto=format&fit=crop&crop=face"
+            alt="Christopher Marrello, Creative Director"
+            class="img-portrait"
+            loading="lazy"
+          />
+          <p class="eyebrow">Creative Director</p>
+          <h4>Christopher Marrello</h4>
+          <p>International stages. Editorial shoots. The precision behind every cut at Raffaello.</p>
+        </article>
+        <article class="team-member reveal reveal-delay-2">
+          <img
+            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&q=80&auto=format&fit=crop&crop=face"
+            alt="Mellissa Marrello, Colour Director"
+            class="img-portrait"
+            loading="lazy"
+          />
+          <p class="eyebrow">Colour Director</p>
+          <h4>Mellissa Marrello</h4>
+          <p>Corrective colour specialist. Precision balayage. The person Yorkville calls when the colour has to be right.</p>
+        </article>
+      </div>
+      <div class="team-cta reveal">
+        <a href="/team" class="btn btn-dark">Meet the Team</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEAT 5: CONTACT / BOOK -->
+  <section class="cta-section dark-section">
+    <div class="container cta-inner">
+      <div class="cta-text reveal">
+        <span class="eyebrow">Book</span>
+        <h2>132 Cumberland Street.<br />Tuesday through Saturday.</h2>
+        <p>We don&apos;t have an app. We have a phone number. Call us.</p>
+        <a href="tel:4169290021" class="btn btn-outline">(416) 929-0021</a>
+      </div>
+      <div class="cta-hours reveal reveal-delay-1">
+        <span class="rule rule-stone"></span>
+        <ul class="hours-list">
+          <li><span>Tuesday</span><span>9am – 5pm</span></li>
+          <li><span>Wednesday</span><span>9am – 5pm</span></li>
+          <li><span>Thursday</span><span>9am – 7pm</span></li>
+          <li><span>Friday</span><span>9am – 5pm</span></li>
+          <li><span>Saturday</span><span>8:30am – 5pm</span></li>
+          <li class="closed"><span>Sunday – Monday</span><span>Closed</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: flex-end;
+    padding-top: 72px;
+    overflow: hidden;
+  }
+  .hero-bg { position: absolute; inset: 0; }
+  .hero-img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(26,26,26,0.92) 0%, rgba(26,26,26,0.4) 50%, rgba(26,26,26,0.2) 100%);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    padding-bottom: clamp(4rem, 10vh, 8rem);
+  }
+  .hero-eyebrow { color: rgba(244,240,232,0.6); margin-bottom: 1.5rem; display: block; }
+  .hero-headline {
+    font-family: var(--font-display);
+    font-size: clamp(4.5rem, 12vw, 9rem);
+    font-weight: 300;
+    color: var(--parchment);
+    line-height: 0.95;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+  }
+  .hero-sub {
+    font-family: var(--font-display);
+    font-size: clamp(1.125rem, 2vw, 1.5rem);
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(244,240,232,0.75);
+    margin-bottom: 3rem;
+    max-width: none;
+  }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .hero-scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    right: clamp(1.5rem, 4vw, 3rem);
+    z-index: 1;
+  }
+  .hero-scroll-hint span {
+    display: block;
+    width: 1px;
+    height: 60px;
+    background: rgba(244,240,232,0.3);
+    animation: scrollLine 2s var(--ease-primary) infinite;
+  }
+  @keyframes scrollLine {
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    51% { transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+  }
+
+  /* PHILOSOPHY */
+  .philosophy-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+  .philosophy-quote blockquote {
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 2vw, 1.75rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--parchment);
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+    max-width: none;
+  }
+  .philosophy-quote cite {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    color: var(--stone);
+    font-style: normal;
+  }
+  .philosophy-facts { display: flex; flex-direction: column; gap: 3rem; }
+  .fact-number {
+    display: block;
+    font-family: var(--font-display);
+    font-size: clamp(3.5rem, 6vw, 5rem);
+    font-weight: 300;
+    color: var(--parchment);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .fact-label {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    color: var(--stone);
+    max-width: none;
+  }
+  @media (max-width: 768px) {
+    .philosophy-inner { grid-template-columns: 1fr; gap: 3rem; }
+  }
+
+  /* SERVICES */
+  .services-preview h2 { margin: 1rem 0 4rem; }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+  .service-card { background: var(--salon-black); }
+  .service-image-wrap { overflow: hidden; }
+  .service-image-wrap img {
+    transition: transform var(--dur-dramatic) var(--ease-primary);
+  }
+  .service-card:hover .service-image-wrap img { transform: scale(1.03); }
+  .service-info {
+    padding: 2rem 1.75rem;
+    background: var(--warm-white);
+  }
+  .service-info .eyebrow { margin-bottom: 0.75rem; }
+  .service-info h3 { margin-bottom: 1rem; }
+  .service-info p { font-size: 0.9rem; color: rgba(26,26,26,0.7); margin-bottom: 1.5rem; }
+  .service-link {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--salon-black);
+    transition: color var(--dur-micro) var(--ease-primary);
+  }
+  .service-link:hover { color: var(--raffaello-red); }
+  @media (max-width: 900px) {
+    .services-grid { grid-template-columns: 1fr; gap: 2px; }
+  }
+
+  /* TEAM */
+  .team-preview { background: var(--parchment); }
+  .team-preview h2 { margin: 1rem 0 4rem; }
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+  .team-member { }
+  .team-member img { margin-bottom: 1.5rem; }
+  .team-member .eyebrow { margin-bottom: 0.5rem; }
+  .team-member h4 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 400; margin-bottom: 0.75rem; }
+  .team-member p { font-size: 0.875rem; color: rgba(26,26,26,0.65); }
+  .team-cta { text-align: center; }
+  @media (max-width: 768px) {
+    .team-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  }
+
+  /* CTA */
+  .cta-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+  .cta-text .eyebrow { margin-bottom: 1rem; color: var(--stone); }
+  .cta-text h2 { color: var(--parchment); margin-bottom: 1.5rem; }
+  .cta-text p { color: var(--stone); margin-bottom: 2.5rem; font-style: italic; font-family: var(--font-display); font-size: 1.125rem; }
+  .hours-list { list-style: none; }
+  .hours-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.875rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    font-size: 0.875rem;
+    color: rgba(244,240,232,0.7);
+  }
+  .hours-list li span:last-child { color: var(--parchment); }
+  .hours-list .closed { opacity: 0.4; }
+  @media (max-width: 768px) {
+    .cta-inner { grid-template-columns: 1fr; gap: 3rem; }
+  }
+</style>
+
+<script>
+  // Hero headline: letter-by-letter reveal using vanilla JS (no GSAP SplitText needed)
+  const headline = document.getElementById('hero-headline');
+  if (headline) {
+    const text = headline.textContent || '';
+    headline.innerHTML = text.split('').map(char =>
+      `<span class="char" style="display:inline-block;opacity:0;transform:translateY(20px)">${char === ' ' ? '&nbsp;' : char}</span>`
+    ).join('');
+    const chars = headline.querySelectorAll('.char');
+    chars.forEach((char, i) => {
+      setTimeout(() => {
+        char.style.transition = `opacity 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94)`;
+        char.style.opacity = '1';
+        char.style.transitionDelay = `${i * 0.04}s`;
+        char.style.transform = 'translateY(0)';
+      }, 300);
+    });
+  }
+</script>
