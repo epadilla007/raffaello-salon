@@ -4,7 +4,7 @@ import react from '@astrojs/react';
 import keystatic from '@keystatic/astro';
 
 export default defineConfig({
-  output: 'static',
+  output: 'hybrid',
   adapter: vercel(),
   integrations: [react(), keystatic()],
   compressHTML: true,
