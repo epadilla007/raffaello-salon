@@ -8,6 +8,9 @@
     "preview": "astro preview"
   },
   "dependencies": {
+    "@astrojs/vercel": "^10.0.8",
+    "@keystatic/astro": "^5.1.0",
+    "@keystatic/core": "^0.5.50",
     "astro": "^4.16.18"
   }
 }
