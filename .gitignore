@@ -21,3 +21,4 @@ pnpm-debug.log*
 
 # Keystatic local SQLite (cloud mode has no local DB, but just in case)
 keystatic.db
+.astro/

@@ -1,11 +1,12 @@
 import { defineConfig } from 'astro/config';
 import vercel from '@astrojs/vercel';
+import react from '@astrojs/react';
 import keystatic from '@keystatic/astro';
 
 export default defineConfig({
-  output: 'hybrid',
+  output: 'static',
   adapter: vercel(),
-  integrations: [keystatic()],
+  integrations: [react(), keystatic()],
   compressHTML: true,
   build: {
     assets: 'assets'
