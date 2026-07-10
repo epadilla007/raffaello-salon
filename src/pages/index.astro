@@ -120,19 +120,43 @@ import Base from '../layouts/Base.astro';
     </div>
   </section>
 
-  <!-- BEAT 4.5: FIELDS OF GOLD — the real, dramatic, unusual story -->
-  <section class="fields-of-gold">
-    <div class="container fog-inner">
-      <div class="reveal">
-        <span class="eyebrow">A True Story</span>
-        <h2>Fields of Gold.</h2>
-        <p>In 1986, Raffaello painted a six-foot by seven-foot oil on canvas of wildflowers. He named it Fields of Gold, for his wife Christine. A decade later, Sting released a song with the same name.</p>
-        <p>The painting has hung in his home for almost forty years. This is the kind of attention that goes into everything he touches.</p>
+  <!-- BEAT 4.5: TESTIMONIALS — real Google reviews -->
+  <section class="testimonials section-bone">
+    <div class="container">
+      <span class="eyebrow reveal">Reviews</span>
+      <h2 class="reveal reveal-delay-1">4.9 stars. 166 reviews.</h2>
+      <div class="testimonial-grid">
+        <blockquote class="testimonial reveal">
+          <p>&ldquo;Salon Raffaello is a Yorkville gem! A family run salon, that treats everyone like family. The Founder Raffaello Marrello has created a masterpiece in the centre of Yorkville. I not only leave the salon with beautiful hair, I also leave feeling completely uplifted. It's not just a hair salon, it's a community and an entire vibe.&rdquo;</p>
+          <cite>Crystal Harbans, Google</cite>
+        </blockquote>
+        <blockquote class="testimonial reveal reveal-delay-1">
+          <p>&ldquo;Melissa is an amazing colourist! Her knowledge is exceptional, and her attention to detail really shows in the final result. Highly recommend if you're serious about your hair colour.&rdquo;</p>
+          <cite>Karen Knowles, Google</cite>
+        </blockquote>
+        <blockquote class="testimonial reveal reveal-delay-2">
+          <p>&ldquo;Chris is not only super skilled at what he does, but he actually listens to what you want and makes sure you leave looking dialed. You can tell he genuinely cares about his work and his clients, which is rare these days.&rdquo;</p>
+          <cite>Joe Hall, Google</cite>
+        </blockquote>
       </div>
-      <blockquote class="fog-quote reveal reveal-delay-1">
-        &ldquo;The extraordinary agility and daring display of dazzling beauty in wildflowers, devoid of human intervention, captivated me.&rdquo;
-        <cite>— Raffaello Marrello</cite>
-      </blockquote>
+    </div>
+  </section>
+
+  <!-- BEAT 4.6: BEFORE / AFTER -->
+  <section class="before-after">
+    <div class="container">
+      <span class="eyebrow reveal">Proof</span>
+      <h2 class="reveal reveal-delay-1">Before. After.</h2>
+      <div class="ba-grid">
+        <div class="ba-pair reveal">
+          <img src="/before-libby.jpg" alt="Before, colour work at Raffaello Salon" class="img-gallery img-bw" loading="lazy" />
+          <img src="/after-libby.jpg" alt="After, colour work at Raffaello Salon" class="img-gallery img-bw" loading="lazy" />
+        </div>
+        <div class="ba-pair reveal reveal-delay-1">
+          <img src="/before-sasha.jpg" alt="Before, colour work at Raffaello Salon" class="img-gallery img-bw" loading="lazy" />
+          <img src="/after-sasha.jpg" alt="After, colour work at Raffaello Salon" class="img-gallery img-bw" loading="lazy" />
+        </div>
+      </div>
     </div>
   </section>
 
@@ -235,19 +259,26 @@ import Base from '../layouts/Base.astro';
   .press-quote-secondary { font-size: clamp(1.125rem, 2vw, 1.5rem); opacity: 0.7; max-width: 20ch; }
   .press-quote cite { display: block; font-family: var(--font-body); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; color: rgba(255,255,255,0.45); font-style: normal; margin-top: 1.25rem; }
 
-  /* FIELDS OF GOLD */
-  .fields-of-gold { background: var(--bone); }
-  .fog-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
-  .fog-inner h2 { margin: 1rem 0 1.5rem; }
-  .fog-inner p { margin-bottom: 1rem; color: var(--graphite); }
-  .fog-quote {
+  /* TESTIMONIALS */
+  .testimonials h2 { margin: 1rem 0 4rem; }
+  .testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; }
+  .testimonial p {
     font-family: var(--font-display);
-    font-size: clamp(1.25rem, 2.25vw, 1.75rem);
+    font-size: 1.05rem;
     font-weight: 500;
-    line-height: 1.4;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
   }
-  .fog-quote cite { display: block; font-family: var(--font-body); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; color: var(--graphite); font-style: normal; margin-top: 1.25rem; }
-  @media (max-width: 900px) { .fog-inner { grid-template-columns: 1fr; gap: 2.5rem; } }
+  .testimonial cite { font-size: 0.75rem; color: var(--graphite); font-style: normal; letter-spacing: 0.03em; }
+  @media (max-width: 900px) { .testimonial-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+
+  /* BEFORE / AFTER */
+  .before-after h2 { margin: 1rem 0 3.5rem; }
+  .ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .ba-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+  .ba-pair img { aspect-ratio: 3/4; }
+  @media (max-width: 700px) { .ba-grid { grid-template-columns: 1fr; gap: 2rem; } }
 
   /* VISIT */
   .visit-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
