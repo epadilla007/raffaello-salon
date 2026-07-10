@@ -29,6 +29,11 @@ import Base from '../layouts/Base.astro';
 
           <p>The art never left. Painting, sculpture, digital work. Rembrandt's darkness, Caravaggio's drama, Vermeer's clarity, all of it feeding back into how he sees a head of hair.</p>
 
+          <figure class="profile-artwork">
+            <img src="/raffaello-artwork.jpg" alt="Digital artwork by Raffaello Marrello" loading="lazy" />
+            <figcaption>Original digital work, Raffaello Marrello.</figcaption>
+          </figure>
+
           <p>Fifty-eight years later, he is still cutting.</p>
 
           <blockquote class="profile-quote">
@@ -59,7 +64,10 @@ import Base from '../layouts/Base.astro';
       </article>
 
       <article class="team-profile reveal">
-        <div class="profile-text profile-text-full">
+        <div class="profile-image">
+          <img src="/christopher-portrait.jpg" alt="Christopher Marrello, Creative Director" class="img-portrait img-bw" loading="lazy" />
+        </div>
+        <div class="profile-text">
           <span class="eyebrow">Creative Director</span>
           <h2>Christopher Marrello</h2>
           <p>Master stylist with a modern eye and extensive editorial and stage experience. Focused on clean lines, movement, and contemporary form.</p>
@@ -128,6 +136,9 @@ import Base from '../layouts/Base.astro';
   .profile-press .eyebrow { display: block; margin-bottom: 1rem; }
   .profile-press ul { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
   .profile-press li { font-size: 0.9rem; color: var(--graphite); padding-bottom: 0.75rem; border-bottom: 1px solid rgba(0,0,0,0.06); }
+  .profile-artwork { margin: 2rem 0; max-width: 320px; }
+  .profile-artwork img { width: 100%; border: 1px solid rgba(0,0,0,0.08); }
+  .profile-artwork figcaption { font-size: 0.75rem; color: var(--graphite); margin-top: 0.5rem; }
 
   @media (max-width: 768px) {
     .team-profile { grid-template-columns: 1fr; gap: 2.5rem; }
