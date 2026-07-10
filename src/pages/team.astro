@@ -2,13 +2,13 @@
 export const prerender = true;
 import Base from '../layouts/Base.astro';
 ---
-<Base title="The Team" description="Meet Raffaello, Christopher, and Mellissa Marrello — three generations behind Yorkville&apos;s original salon.">
+<Base title="The Family" description="Meet Raffaello, Christopher, and Mellissa Marrello — three generations behind Yorkville's original salon.">
 
-  <div class="page-header dark-section">
+  <div class="page-header section-ink">
     <div class="container">
       <span class="eyebrow reveal">Since 1968</span>
-      <h1 class="reveal reveal-delay-1">The Team.</h1>
-      <p class="header-sub reveal reveal-delay-2">Three generations. One family. No junior stylists.</p>
+      <h1 class="reveal reveal-delay-1">The Family.</h1>
+      <p class="header-sub reveal reveal-delay-2">Three generations. One family. Fifty-eight years in Yorkville.</p>
     </div>
   </div>
 
@@ -17,68 +17,75 @@ import Base from '../layouts/Base.astro';
 
       <article class="team-profile reveal">
         <div class="profile-image">
-          <img
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80&auto=format&fit=crop&crop=face"
-            alt="Raffaello Marrello, Founder"
-            class="img-portrait"
-            loading="lazy"
-          />
+          <img src="/raffaello-portrait.jpeg" alt="Raffaello Marrello, Founder" class="img-portrait img-bw" loading="lazy" />
         </div>
         <div class="profile-text">
           <span class="eyebrow">Founder</span>
           <h2>Raffaello Marrello</h2>
-          <p class="profile-year">Since 1968</p>
-          <p>Raffaello Marrello opened the salon in 1968 in Yorkville, Toronto. He built it on one principle: when you understand people, hairstyles become unlimited. He is still behind the chair.</p>
-          <p>Over five decades in the same neighbourhood. The same address. The same standard. The work does not need explaining.</p>
+
+          <p>Born under the Italian sky, Raffaello came to Canada with his family at 12. He was drawn to Michelangelo, Raphael, and Da Vinci before he ever picked up a pair of scissors. He remembers standing in front of <em>The Last Supper</em> and the <em>Mona Lisa</em> in Milan, and calling it the moment that set his life in motion.</p>
+
+          <p>He started painting at 12, oil on canvas. His first commission, for a deer hunter, came at 13. Family tradition pointed him toward a trade. He went to beauty school at 16. By 19, he was the youngest Provincial Hairdressing Champion in the province. By 21, he had opened his own salon in Toronto.</p>
+
+          <p>The art never left. Painting, sculpture, digital work. Rembrandt's darkness, Caravaggio's drama, Vermeer's clarity, all of it feeding back into how he sees a head of hair.</p>
+
+          <p>Fifty-eight years later, he is still cutting.</p>
+
           <blockquote class="profile-quote">
             &ldquo;When you do styles you limit yourself to some people, when you do people hairstyles are unlimited.&rdquo;
+            <cite>1991</cite>
           </blockquote>
+
+          <blockquote class="profile-quote">
+            &ldquo;Every piece I create is a question posed to the universe, and a response that is uniquely my own.&rdquo;
+          </blockquote>
+
+          <blockquote class="profile-quote">
+            &ldquo;It is chaotic, orderly, beautiful, traumatic, and inspiring, an intricate dance that can be difficult for some to follow. Yet we must keep our minds open. The flood of evolution is upon us, and it is impossible to stop.&rdquo;
+          </blockquote>
+
+          <div class="profile-press">
+            <p class="eyebrow">Recognition</p>
+            <ul>
+              <li>Featured in Japan's Passion Magazine — the only Canadian hairstylist selected</li>
+              <li>Cover and six-page editorial, Spain's Peluquerias Magazine</li>
+              <li>Styled Helena Bonham Carter for <em>The Wings of the Dove</em></li>
+              <li>Styled Roberto Benigni for <em>Life Is Beautiful</em></li>
+              <li>Clients include Faye Dunaway, Joan Rivers, James Cameron, Minnie Driver, and Liv Ullmann</li>
+              <li>Original cutting techniques introduced over five decades: Gesture Cutting, Free Form, Fractal, Baling, Strolling, Fan, Entropy, Whole, Chaos Cutting, and the Universal MDXS System, first shown in 1970</li>
+            </ul>
+          </div>
         </div>
       </article>
 
       <article class="team-profile reveal">
-        <div class="profile-image">
-          <img
-            src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80&auto=format&fit=crop&crop=face"
-            alt="Christopher Marrello, Creative Director"
-            class="img-portrait"
-            loading="lazy"
-          />
-        </div>
-        <div class="profile-text">
+        <div class="profile-text profile-text-full">
           <span class="eyebrow">Creative Director</span>
           <h2>Christopher Marrello</h2>
-          <p class="profile-year">Raffaello&apos;s son</p>
-          <p>Christopher Marrello is the Creative Director at Raffaello Salon. He has worked on international stages and editorial shoots. He brought those references back to Cumberland Street.</p>
-          <p>Every haircut in the salon reflects the standard Christopher holds. Precision. No shortcuts. The same discipline that has kept Raffaello in Yorkville for over 50 years.</p>
+          <p>Master stylist with a modern eye and extensive editorial and stage experience. Focused on clean lines, movement, and contemporary form.</p>
+          <p>Trained under Raffaello, building on Italian technique with a contemporary register: published editorial work, international stages, and the salon's day-to-day artistic direction.</p>
         </div>
       </article>
 
       <article class="team-profile reveal">
         <div class="profile-image">
-          <img
-            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&q=80&auto=format&fit=crop&crop=face"
-            alt="Mellissa Marrello, Colour Director"
-            class="img-portrait"
-            loading="lazy"
-          />
+          <img src="/mellissa-portrait.webp" alt="Mellissa Marrello, Colour Director" class="img-portrait img-bw" loading="lazy" />
         </div>
         <div class="profile-text">
           <span class="eyebrow">Colour Director</span>
           <h2>Mellissa Marrello</h2>
-          <p class="profile-year">Colour specialist</p>
-          <p>Mellissa Marrello is the Colour Director at Raffaello Salon. She specializes in corrective colour and precision balayage. Clients come to Mellissa when the colour has to be right the first time.</p>
-          <p>Her work includes balayage, ombré, highlights, lowlights, and colour correction. When the colour needs fixing, Mellissa is who Yorkville calls.</p>
+          <p>Master colourist recognized for refined, dimensional colour work. Her approach balances artistry with technical precision and thoughtful consultation.</p>
+          <p>Every formula is considered for the client in the chair. Corrective work and precision balayage are among her specialties.</p>
         </div>
       </article>
 
     </div>
   </section>
 
-  <section class="team-cta dark-section">
+  <section class="team-cta section-ink">
     <div class="container">
-      <h2 class="reveal">Book an appointment<br />with the team.</h2>
-      <a href="/contact" class="btn btn-primary reveal reveal-delay-1">Book Your Appointment</a>
+      <h2 class="reveal">Book an appointment<br />with the family.</h2>
+      <a href="/contact" class="btn btn-primary reveal reveal-delay-1">Book Appointment</a>
     </div>
   </section>
 
@@ -86,41 +93,47 @@ import Base from '../layouts/Base.astro';
 
 <style>
   .page-header { padding: 10rem 0 5rem; }
-  .page-header .eyebrow { color: var(--stone); display: block; margin-bottom: 1.5rem; }
-  .page-header h1 { color: var(--parchment); margin-bottom: 1rem; }
-  .header-sub { font-family: var(--font-display); font-style: italic; font-size: 1.25rem; color: var(--stone); max-width: none; }
+  .page-header .eyebrow { display: block; margin-bottom: 1.5rem; }
+  .page-header h1 { margin-bottom: 1rem; }
+  .header-sub { font-family: var(--font-display); font-size: 1.125rem; color: rgba(255,255,255,0.55); max-width: none; }
 
-  .team-section { padding: clamp(4rem, 8vw, 7.5rem) 0; background: var(--parchment); }
+  .team-section { padding: clamp(4rem, 8vw, 7.5rem) 0; }
   .team-profile {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     gap: 6rem;
     align-items: start;
-    padding-bottom: 6rem;
-    border-bottom: 1px solid rgba(26,26,26,0.08);
-    margin-bottom: 6rem;
+    padding-bottom: 5rem;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    margin-bottom: 5rem;
   }
   .team-profile:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .profile-text-full { grid-column: 1 / -1; max-width: 720px; }
   .profile-image img { max-width: 420px; }
   .profile-text .eyebrow { margin-bottom: 0.75rem; display: block; }
-  .profile-text h2 { margin-bottom: 0.25rem; font-size: clamp(2rem, 3.5vw, 3rem); }
-  .profile-year { font-family: var(--font-display); font-style: italic; font-size: 1rem; color: var(--stone); margin-bottom: 2rem; max-width: none; }
-  .profile-text p { font-size: 0.95rem; color: rgba(26,26,26,0.7); margin-bottom: 1.25rem; }
+  .profile-text h2 { margin-bottom: 2rem; }
+  .profile-text p { font-size: 0.95rem; color: var(--graphite); margin-bottom: 1.25rem; }
   .profile-quote {
-    margin-top: 2.5rem;
-    padding-left: 2rem;
-    border-left: 1px solid var(--stone);
+    margin: 2rem 0;
+    padding-left: 1.5rem;
+    border-left: 1px solid var(--ink);
     font-family: var(--font-display);
-    font-style: italic;
-    font-size: 1.25rem;
-    color: var(--salon-black);
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--ink);
     max-width: none;
   }
+  .profile-quote cite { display: block; font-family: var(--font-body); font-size: 0.75rem; letter-spacing: 0.08em; color: var(--graphite); font-style: normal; margin-top: 0.75rem; }
+  .profile-press { margin-top: 3rem; }
+  .profile-press .eyebrow { display: block; margin-bottom: 1rem; }
+  .profile-press ul { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+  .profile-press li { font-size: 0.9rem; color: var(--graphite); padding-bottom: 0.75rem; border-bottom: 1px solid rgba(0,0,0,0.06); }
+
   @media (max-width: 768px) {
     .team-profile { grid-template-columns: 1fr; gap: 2.5rem; }
     .profile-image img { max-width: 100%; }
   }
 
   .team-cta { text-align: center; }
-  .team-cta h2 { color: var(--parchment); margin-bottom: 2.5rem; }
+  .team-cta h2 { margin-bottom: 2.5rem; }
 </style>

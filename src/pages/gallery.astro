@@ -1,0 +1,77 @@
+---
+export const prerender = true;
+import Base from '../layouts/Base.astro';
+---
+<Base title="Gallery" description="A selection of the work at Raffaello Salon, Yorkville, Toronto.">
+
+  <div class="page-header section-ink">
+    <div class="container">
+      <span class="eyebrow reveal">Since 1968</span>
+      <h1 class="reveal reveal-delay-1">The Gallery.</h1>
+      <p class="header-sub reveal reveal-delay-2">A selection of the work. Archive and present.</p>
+    </div>
+  </div>
+
+  <section class="gallery-section">
+    <div class="container">
+      <div class="gallery-grid">
+        <figure class="gallery-item gallery-item-tall reveal">
+          <img src="/press-trim-cover-1968.webp" alt="TRIM, Canada's Largest Beauty Magazine, 1968" class="img-gallery img-bw" loading="lazy" />
+          <figcaption>From the archive, 1968</figcaption>
+        </figure>
+        <figure class="gallery-item reveal reveal-delay-1">
+          <img src="/raffaello-portrait.jpeg" alt="Raffaello Marrello" class="img-gallery img-bw" loading="lazy" />
+          <figcaption>Raffaello Marrello, Founder</figcaption>
+        </figure>
+        <figure class="gallery-item reveal reveal-delay-2">
+          <img src="/mellissa-portrait.webp" alt="Mellissa Marrello" class="img-gallery img-bw" loading="lazy" />
+          <figcaption>Mellissa Marrello, Colour Director</figcaption>
+        </figure>
+        <figure class="gallery-item gallery-item-wide reveal">
+          <img src="/spa-treatment.jpg" alt="Spa treatment at Raffaello Salon" class="img-gallery img-bw" loading="lazy" />
+          <figcaption>The spa</figcaption>
+        </figure>
+      </div>
+
+      <p class="gallery-note reveal">More from the archive on request. Follow <a href="https://instagram.com/raffaellosalon" target="_blank" rel="noopener">@raffaellosalon</a> for current work.</p>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  .page-header { padding: 10rem 0 5rem; }
+  .page-header .eyebrow { display: block; margin-bottom: 1.5rem; }
+  .header-sub { font-family: var(--font-display); font-size: 1.125rem; color: rgba(255,255,255,0.55); max-width: none; }
+
+  .gallery-section { padding: clamp(4rem, 8vw, 7.5rem) 0; }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-bottom: 3rem;
+  }
+  .gallery-item { position: relative; overflow: hidden; }
+  .gallery-item-tall { grid-row: span 2; }
+  .gallery-item-wide { grid-column: span 2; }
+  .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--dur-dramatic) var(--ease-primary); }
+  .gallery-item:hover img { transform: scale(1.03); }
+  .gallery-item figcaption {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 1rem 1.25rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    color: var(--paper);
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    opacity: 0;
+    transition: opacity var(--dur-micro) var(--ease-primary);
+  }
+  .gallery-item:hover figcaption { opacity: 1; }
+  .gallery-note { color: var(--graphite); font-size: 0.9rem; }
+  .gallery-note a { text-decoration: underline; color: var(--ink); }
+  @media (max-width: 768px) {
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .gallery-item-wide { grid-column: span 2; }
+    .gallery-item-tall { grid-row: span 1; }
+  }
+</style>

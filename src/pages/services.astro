@@ -2,98 +2,64 @@
 export const prerender = true;
 import Base from '../layouts/Base.astro';
 ---
-<Base title="Services" description="Hair, colour, and spa services at Raffaello Salon, Yorkville Toronto since 1968.">
+<Base title="Services & Pricing" description="Hair, colour, and spa services at Raffaello Salon, Yorkville Toronto since 1968.">
 
-  <div class="page-header dark-section">
+  <div class="page-header section-ink">
     <div class="container">
       <span class="eyebrow reveal">132 Cumberland Street</span>
-      <h1 class="reveal reveal-delay-1">The Services.</h1>
+      <h1 class="reveal reveal-delay-1">Hair. Colour. Spa.</h1>
     </div>
   </div>
 
-  <section id="hair" class="service-section light-section">
-    <div class="container service-layout">
-      <div class="service-text reveal">
-        <span class="eyebrow">Hair &amp; Style</span>
-        <span class="rule"></span>
-        <h2>The Cut.</h2>
-        <p class="service-director">Christopher Marrello, Creative Director</p>
-        <p>Every haircut at Raffaello is performed by a senior stylist. No training. No assistants. The person who consults is the person who cuts.</p>
-        <ul class="service-list">
-          <li>Women&apos;s Haircut &amp; Style</li>
-          <li>Men&apos;s Haircut &amp; Style</li>
-          <li>Blowout &amp; Styling</li>
-          <li>Keratin Treatments</li>
-          <li>Up-do &amp; Special Occasion</li>
-          <li>Bridal Styling</li>
-        </ul>
-        <a href="/contact" class="btn btn-dark">Book an Appointment</a>
+  <section id="hair" class="service-section section-bone">
+    <div class="container">
+      <span class="eyebrow reveal">Hair &amp; Style</span>
+      <span class="rule reveal"></span>
+      <div class="price-block reveal">
+        <div class="price-row"><span>Women's cut, Raffaello</span><span>from $175</span></div>
+        <div class="price-row"><span>Women's cut, Christopher</span><span>from $130</span></div>
+        <div class="price-row"><span>Women's cut, team</span><span>from $110</span></div>
+        <div class="price-row"><span>Men's cut, Raffaello</span><span>$120</span></div>
+        <div class="price-row"><span>Men's cut, Christopher</span><span>$70</span></div>
+        <div class="price-row"><span>Men's cut, team</span><span>from $60</span></div>
+        <div class="price-row"><span>Blowout &amp; styling</span><span>by consultation</span></div>
+        <div class="price-row"><span>Bridal &amp; special occasion</span><span>by consultation</span></div>
       </div>
-      <div class="service-image reveal reveal-delay-1">
-        <img
-          src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=800&q=80&auto=format&fit=crop"
-          alt="Hair cutting at Raffaello Salon"
-          class="img-portrait"
-          loading="lazy"
-        />
-      </div>
+      <a href="/contact" class="btn btn-outline-ink reveal">Book Appointment</a>
     </div>
   </section>
 
   <section id="colour" class="service-section">
-    <div class="container service-layout service-layout--reverse">
-      <div class="service-image reveal">
-        <img
-          src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80&auto=format&fit=crop"
-          alt="Colour work at Raffaello Salon"
-          class="img-portrait"
-          loading="lazy"
-        />
+    <div class="container">
+      <span class="eyebrow reveal">Colour</span>
+      <span class="rule reveal"></span>
+      <div class="price-block reveal">
+        <div class="price-row"><span>Root touch-up, Mellissa</span><span>from $150</span></div>
+        <div class="price-row"><span>Full highlights, Mellissa</span><span>from $350</span></div>
+        <div class="price-row"><span>Balayage</span><span>by consultation</span></div>
+        <div class="price-row"><span>Colour correction</span><span>by consultation</span></div>
+        <div class="price-row"><span>Colour, team</span><span>from $100</span></div>
+        <div class="price-row"><span>Gloss &amp; toning</span><span>from $45</span></div>
       </div>
-      <div class="service-text reveal reveal-delay-1">
-        <span class="eyebrow">Colour</span>
-        <span class="rule"></span>
-        <h2>The Colour.</h2>
-        <p class="service-director">Mellissa Marrello, Colour Director</p>
-        <p>Corrective colour, precision balayage, and colour work that holds. Mellissa Marrello built her career on getting colour right the first time.</p>
-        <ul class="service-list">
-          <li>Balayage &amp; Ombré</li>
-          <li>Highlights &amp; Lowlights</li>
-          <li>Corrective Colour</li>
-          <li>Full Colour</li>
-          <li>Gloss &amp; Toning</li>
-          <li>Colour Consultation</li>
-        </ul>
-        <a href="/contact" class="btn btn-dark">Book an Appointment</a>
-      </div>
+      <a href="/contact" class="btn btn-outline-ink reveal">Book Appointment</a>
     </div>
   </section>
 
-  <section id="spa" class="service-section light-section">
-    <div class="container service-layout">
-      <div class="service-text reveal">
-        <span class="eyebrow">Spa</span>
-        <span class="rule"></span>
-        <h2>The Spa.</h2>
-        <p>Full-service spa treatments at the same location as your hair appointment. One visit. Complete care.</p>
-        <ul class="service-list">
-          <li>Facials</li>
-          <li>Dermaplaning</li>
-          <li>Oxygen Treatments</li>
-          <li>Microcurrent Lifts</li>
-          <li>Waxing</li>
-          <li>Manicures &amp; Pedicures</li>
-        </ul>
-        <a href="/contact" class="btn btn-dark">Book an Appointment</a>
-      </div>
-      <div class="service-image reveal reveal-delay-1">
-        <img
-          src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&q=80&auto=format&fit=crop"
-          alt="Spa services"
-          class="img-portrait"
-          loading="lazy"
-        />
-      </div>
+  <section id="spa" class="service-section section-bone">
+    <div class="container">
+      <span class="eyebrow reveal">Spa</span>
+      <span class="rule reveal"></span>
+      <p class="spa-intro reveal">Full-service spa treatments at the same location as your hair appointment. One visit, complete care.</p>
+      <ul class="spa-list reveal">
+        <li>Facials</li>
+        <li>Dermaplaning</li>
+        <li>Oxygen treatments</li>
+        <li>Microcurrent lifts</li>
+        <li>Waxing</li>
+        <li>Manicures &amp; pedicures</li>
+      </ul>
+      <p class="micro-cta reveal">Full menu and pricing on request. Call <a href="tel:4169290021">(416) 929-0021</a>.</p>
+      <a href="/contact" class="btn btn-outline-ink reveal">Book Appointment</a>
     </div>
   </section>
 
@@ -101,47 +67,31 @@ import Base from '../layouts/Base.astro';
 
 <style>
   .page-header { padding: 10rem 0 5rem; }
-  .page-header .eyebrow { color: var(--stone); margin-bottom: 1.5rem; display: block; }
-  .page-header h1 { color: var(--parchment); }
+  .page-header .eyebrow { display: block; margin-bottom: 1.5rem; }
 
-  .service-section { }
-  .service-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-    align-items: center;
-  }
-  .service-layout--reverse { }
-  .service-layout--reverse .service-image { order: -1; }
+  .service-section .eyebrow { display: block; margin-bottom: 1rem; }
+  .service-section .rule { margin-bottom: 3rem; }
 
-  .service-text .eyebrow { margin-bottom: 1rem; display: block; }
-  .service-text .rule { margin-bottom: 1.5rem; }
-  .service-text h2 { margin-bottom: 0.5rem; }
-  .service-director {
-    font-family: var(--font-display);
-    font-style: italic;
-    font-size: 1.125rem;
-    color: var(--stone);
-    margin-bottom: 1.5rem;
-    max-width: none;
-  }
-  .service-text p { color: rgba(26,26,26,0.7); margin-bottom: 2rem; font-size: 0.95rem; }
-  .service-list {
-    list-style: none;
-    margin-bottom: 2.5rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-  }
-  .service-list li {
-    padding: 0.75rem 0;
+  .price-block { max-width: 700px; margin-bottom: 3rem; }
+  .price-row {
+    display: flex; justify-content: space-between;
+    padding: 0.9rem 0;
     border-bottom: 1px solid rgba(0,0,0,0.08);
-    font-size: 0.875rem;
-    color: var(--salon-black);
+    font-size: 0.95rem;
   }
-  @media (max-width: 768px) {
-    .service-layout, .service-layout--reverse { grid-template-columns: 1fr; gap: 2.5rem; }
-    .service-layout--reverse .service-image { order: 0; }
-    .service-list { grid-template-columns: 1fr; }
+  .price-row span:last-child { color: var(--graphite); }
+
+  .spa-intro { max-width: 55ch; color: var(--graphite); margin-bottom: 2.5rem; }
+  .spa-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 500px;
+    margin-bottom: 2rem;
   }
+  .spa-list li { padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.08); font-size: 0.9rem; }
+  .micro-cta { font-size: 0.9rem; color: var(--graphite); margin-bottom: 2.5rem; }
+  .micro-cta a { text-decoration: underline; color: var(--ink); }
+
+  @media (max-width: 600px) { .spa-list { grid-template-columns: 1fr; } }
 </style>

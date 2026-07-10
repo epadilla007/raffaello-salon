@@ -2,15 +2,15 @@
 export interface Props {
   title: string;
   description?: string;
-  hasDarkHero?: boolean;
+  darkFooterOnly?: boolean;
 }
 
 const {
   title,
   description = "Raffaello Salon — Yorkville's original salon since 1968. Hair, colour, and spa services at 132 Cumberland Street, Toronto.",
-  hasDarkHero = false
 } = Astro.props;
 ---
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -18,23 +18,26 @@ const {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content={description} />
   <title>{title} | Raffaello Salon</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,500,400&f[]=switzer@400,500,600&display=swap" rel="stylesheet" />
+
   <style is:global>
-    /* === DESIGN TOKENS === */
+    /* === DESIGN TOKENS (v2 — avant-garde minimal, 2026-07-10) === */
     :root {
-      --salon-black: #1A1A1A;
-      --parchment: #F4F0E8;
-      --raffaello-red: #C41E1E;
-      --warm-white: #FAFAF7;
-      --stone: #9E9E9E;
-      --font-display: "Cormorant Garamond", Georgia, serif;
-      --font-body: "Outfit", system-ui, sans-serif;
-      --ease-primary: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --paper: #FFFFFF;
+      --ink: #0A0A0A;
+      --bone: #F5F4F1;
+      --graphite: #6B6B6B;
+      --signal: #C41E1E;
+
+      --font-display: "Cabinet Grotesk", "Nohemi", system-ui, sans-serif;
+      --font-body: "Switzer", system-ui, sans-serif;
+
+      --ease-primary: cubic-bezier(0.22, 1, 0.36, 1);
       --dur-micro: 200ms;
-      --dur-standard: 600ms;
-      --dur-dramatic: 900ms;
+      --dur-standard: 400ms;
+      --dur-dramatic: 800ms;
       --dur-cinematic: 1200ms;
     }
 
@@ -44,9 +47,8 @@ const {
     img, video { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
 
-    /* === CRAFT SIGNALS === */
-    ::selection { background: var(--raffaello-red); color: var(--parchment); }
-    ::-moz-selection { background: var(--raffaello-red); color: var(--parchment); }
+    ::selection { background: var(--ink); color: var(--paper); }
+    ::-moz-selection { background: var(--ink); color: var(--paper); }
 
     /* === GLOBAL TYPOGRAPHY === */
     body {
@@ -54,153 +56,113 @@ const {
       font-weight: 400;
       font-size: 1rem;
       line-height: 1.6;
-      color: var(--salon-black);
-      background: var(--parchment);
+      color: var(--ink);
+      background: var(--paper);
     }
-
     h1, h2, h3, h4 {
       font-family: var(--font-display);
-      line-height: 1.05;
+      line-height: 1.02;
       text-wrap: balance;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.02em;
+      font-weight: 500;
     }
-    h1 { font-size: clamp(3rem, 7vw, 6rem); font-weight: 300; }
-    h2 { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 300; }
-    h3 { font-size: clamp(1.5rem, 2.5vw, 2.25rem); font-weight: 400; }
-    h4 { font-size: clamp(1.125rem, 1.5vw, 1.5rem); font-weight: 600; }
-
-    p { max-width: 65ch; }
+    h1 { font-size: clamp(3.5rem, 9vw, 8.75rem); font-weight: 500; }
+    h2 { font-size: clamp(2rem, 4.5vw, 2.5rem); font-weight: 500; }
+    h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); font-weight: 500; }
+    h4 { font-size: 1rem; font-weight: 600; }
+    p { max-width: 62ch; color: var(--ink); }
 
     /* === LAYOUT === */
     .container {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 0 clamp(1.5rem, 4vw, 3rem);
     }
+    section { padding: clamp(6.25rem, 10vw, 10rem) 0; }
 
-    section { padding: clamp(5rem, 10vw, 7.5rem) 0; }
-
-    /* === DARK SECTIONS === */
-    .dark-section {
-      background: var(--salon-black);
-      color: var(--parchment);
-    }
-    .dark-section p, .dark-section .caption { color: var(--stone); }
-
-    /* === LIGHT SECTION === */
-    .light-section { background: var(--warm-white); }
+    .section-bone { background: var(--bone); }
+    .section-ink { background: var(--ink); color: var(--paper); }
+    .section-ink p, .section-ink .caption { color: rgba(255,255,255,0.55); }
+    .section-ink h1, .section-ink h2, .section-ink h3 { color: var(--paper); }
 
     /* === BUTTON === */
     .btn {
       display: inline-block;
-      padding: 1rem 2.5rem;
+      padding: 1rem 2.25rem;
       font-family: var(--font-body);
-      font-size: 0.875rem;
+      font-size: 0.8rem;
       font-weight: 500;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       border: none;
+      border-radius: 999px;
       cursor: pointer;
-      transition: background var(--dur-micro) var(--ease-primary), color var(--dur-micro) var(--ease-primary);
+      transition: background var(--dur-micro) var(--ease-primary), color var(--dur-micro) var(--ease-primary), opacity var(--dur-micro) var(--ease-primary);
     }
-    .btn-primary {
-      background: var(--raffaello-red);
-      color: var(--warm-white);
-    }
-    .btn-primary:hover { background: #a01818; }
-    .btn-outline {
-      background: transparent;
-      color: var(--parchment);
-      border: 1px solid var(--stone);
-    }
-    .btn-outline:hover {
-      border-color: var(--parchment);
-      color: var(--warm-white);
-    }
-    .btn-dark {
-      background: var(--salon-black);
-      color: var(--parchment);
-    }
-    .btn-dark:hover { background: #2a2a2a; }
+    .btn-primary { background: var(--signal); color: var(--paper); }
+    .btn-primary:hover { opacity: 0.85; }
+    .btn-outline-ink { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+    .btn-outline-ink:hover { background: var(--ink); color: var(--paper); }
+    .btn-outline-paper { background: transparent; color: var(--paper); border: 1px solid rgba(255,255,255,0.4); }
+    .btn-outline-paper:hover { border-color: var(--paper); }
 
-    /* === EYEBROW === */
+    /* === EYEBROW / LABEL === */
     .eyebrow {
       font-family: var(--font-body);
       font-size: 0.75rem;
       font-weight: 500;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--stone);
+      color: var(--graphite);
     }
+    .section-ink .eyebrow { color: rgba(255,255,255,0.45); }
 
     /* === IMAGES === */
-    .img-portrait {
-      width: 100%;
-      aspect-ratio: 3/4;
-      object-fit: cover;
-      object-position: top center;
-    }
-    .img-wide {
-      width: 100%;
-      aspect-ratio: 16/9;
-      object-fit: cover;
-    }
+    .img-portrait { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top center; }
+    .img-gallery { width: 100%; aspect-ratio: 4/5; object-fit: cover; }
+    .img-bw { filter: saturate(0.15) contrast(1.1); }
+
+    /* === HAIRLINE RULE — the single geometric motif === */
+    .rule { display: block; width: 40px; height: 1px; background: var(--ink); margin-bottom: 2rem; }
+    .section-ink .rule { background: rgba(255,255,255,0.4); }
+    .rule-full { display: block; width: 100%; height: 1px; background: rgba(0,0,0,0.08); }
 
     /* === ANIMATION BASE === */
     .reveal {
       opacity: 0;
-      transform: translateY(30px);
-      transition: opacity var(--dur-standard) var(--ease-primary),
-                  transform var(--dur-standard) var(--ease-primary);
+      transform: translateY(24px);
+      transition: opacity var(--dur-standard) var(--ease-primary), transform var(--dur-standard) var(--ease-primary);
     }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .reveal.visible { opacity: 1; transform: none; }
     .reveal-delay-1 { transition-delay: 0.12s; }
     .reveal-delay-2 { transition-delay: 0.24s; }
     .reveal-delay-3 { transition-delay: 0.36s; }
 
-    /* === REDUCED MOTION === */
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
       .reveal { opacity: 1; transform: none; }
       html { scroll-behavior: auto; }
     }
 
-    /* === DIVIDER === */
-    .rule {
-      display: block;
-      width: 40px;
-      height: 1px;
-      background: var(--raffaello-red);
-      margin-bottom: 2rem;
-    }
-    .rule-stone {
-      background: var(--stone);
-    }
+    /* Sharp corners everywhere except the CTA button — deliberate per creative direction */
+    img, .card, .price-row { border-radius: 0; }
   </style>
 </head>
-<body data-hero={hasDarkHero ? "dark" : "light"}>
+<body>
   <!-- NAV -->
   <header id="site-nav">
     <nav class="container">
       <a href="/" class="nav-logo" aria-label="Raffaello Salon home">
-        <img src="https://irp.cdn-website.com/be09994b/dms3rep/multi/Raffaello+Logo+-+Red.png"
-             alt="Raffaello Salon" width="140" height="40" loading="eager" />
+        <img src="/raffaello-logo.svg" alt="Raffaello Salon" width="140" height="18" loading="eager" />
       </a>
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" role="list">
+        <li><a href="/team">The Family</a></li>
         <li><a href="/services">Services</a></li>
-        <li><a href="/team">The Team</a></li>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="tel:4169290021" class="nav-cta">(416) 929-0021</a></li>
+        <li><a href="/gallery">Gallery</a></li>
+        <li><a href="/contact" class="nav-cta">Book Appointment</a></li>
       </ul>
     </nav>
   </header>
@@ -211,27 +173,22 @@ const {
   </main>
 
   <!-- FOOTER -->
-  <footer class="site-footer dark-section">
+  <footer class="site-footer section-ink">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <img src="https://irp.cdn-website.com/be09994b/dms3rep/multi/Raffaello+Logo+-+Red.png"
-             alt="Raffaello Salon" width="120" height="36" loading="lazy" />
+        <img src="/raffaello-logo.svg" alt="Raffaello Salon" width="120" height="16" loading="lazy" style="filter: invert(1);" />
         <p>Since 1968.</p>
       </div>
       <div class="footer-col">
-        <p class="eyebrow">Location</p>
-        <address>
-          132 Cumberland Street<br />
-          2nd Floor<br />
-          Toronto, ON M5R 1A6
-        </address>
+        <p class="eyebrow">Visit</p>
+        <address>132 Cumberland Street<br />2nd Floor<br />Toronto, ON M5R 1A6</address>
       </div>
       <div class="footer-col">
         <p class="eyebrow">Hours</p>
-        <p>Tue — Wed — Fri: 9am – 5pm</p>
-        <p>Thursday: 9am – 7pm</p>
-        <p>Saturday: 8:30am – 5pm</p>
-        <p>Sun — Mon: Closed</p>
+        <p>Tue, Wed, Fri — 9am to 5pm</p>
+        <p>Thursday — 9am to 7pm</p>
+        <p>Saturday — 8:30am to 5pm</p>
+        <p>Sunday, Monday — Closed</p>
       </div>
       <div class="footer-col">
         <p class="eyebrow">Contact</p>
@@ -244,69 +201,48 @@ const {
       </div>
     </div>
     <div class="container footer-bottom">
-      <p class="caption">© 2026 Raffaello Salon. All rights reserved.</p>
+      <p class="caption">&copy; 2026 Raffaello Salon. All rights reserved.</p>
     </div>
   </footer>
 
   <style>
-    /* NAV */
     #site-nav {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       z-index: 100;
-      transition: background var(--dur-standard) var(--ease-primary),
-                  border-color var(--dur-standard) var(--ease-primary);
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
     }
-    [data-hero="dark"] #site-nav { background: transparent; border-bottom: 1px solid transparent; }
-    [data-hero="light"] #site-nav,
-    #site-nav.scrolled { background: rgba(250,250,247,0.96); border-bottom: 1px solid rgba(0,0,0,0.08); }
-    [data-hero="dark"] #site-nav:not(.scrolled) .nav-links a { color: rgba(244,240,232,0.85); }
-    [data-hero="dark"] #site-nav:not(.scrolled) .nav-links a:hover { color: var(--warm-white); }
-    [data-hero="dark"] #site-nav:not(.scrolled) .nav-cta { border-color: rgba(244,240,232,0.4); }
-    [data-hero="dark"] #site-nav:not(.scrolled) .nav-toggle span { background: var(--parchment); }
-
-    #site-nav nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 72px;
-    }
-    .nav-logo img { height: 36px; width: auto; }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 2.5rem;
-      list-style: none;
-    }
+    #site-nav nav { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+    .nav-logo img { height: 16px; width: auto; }
+    .nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
     .nav-links a {
       font-family: var(--font-body);
       font-size: 0.8rem;
-      font-weight: 400;
-      letter-spacing: 0.12em;
+      font-weight: 500;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--salon-black);
-      transition: color var(--dur-micro) var(--ease-primary);
+      color: var(--ink);
+      transition: opacity var(--dur-micro) var(--ease-primary);
     }
-    .nav-links a:hover { color: var(--raffaello-red); }
+    .nav-links a:hover { opacity: 0.6; }
     .nav-cta {
-      padding: 0.6rem 1.5rem;
-      border: 1px solid var(--salon-black);
+      padding: 0.6rem 1.4rem;
+      border: 1px solid var(--ink);
+      border-radius: 999px;
       transition: background var(--dur-micro) var(--ease-primary), color var(--dur-micro) var(--ease-primary) !important;
     }
-    .nav-cta:hover { background: var(--salon-black) !important; color: var(--parchment) !important; }
+    .nav-cta:hover { background: var(--ink) !important; color: var(--paper) !important; opacity: 1 !important; }
     .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
-    .nav-toggle span { display: block; width: 24px; height: 1px; background: var(--salon-black); transition: all var(--dur-micro) var(--ease-primary); }
-
+    .nav-toggle span { display: block; width: 22px; height: 1px; background: var(--ink); }
     @media (max-width: 768px) {
       .nav-toggle { display: flex; }
       .nav-links {
-        position: fixed;
-        top: 72px; left: 0; right: 0;
-        flex-direction: column;
-        background: var(--warm-white);
-        padding: 2rem;
+        position: fixed; top: 76px; left: 0; right: 0;
+        flex-direction: column; align-items: flex-start;
+        background: var(--paper);
+        padding: 2rem clamp(1.5rem, 4vw, 3rem);
         gap: 1.5rem;
         display: none;
         border-top: 1px solid rgba(0,0,0,0.08);
@@ -314,42 +250,27 @@ const {
       .nav-links.open { display: flex; }
     }
 
-    /* FOOTER */
-    .site-footer { padding: clamp(3rem,6vw,5rem) 0 2rem; }
+    .site-footer { padding: clamp(3.5rem, 6vw, 5.5rem) 0 2rem; }
     .footer-grid {
       display: grid;
       grid-template-columns: 1fr repeat(3, auto);
       gap: 3rem;
       padding-bottom: 3rem;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
       align-items: start;
     }
-    .footer-brand p { font-family: var(--font-display); font-size: 1.25rem; font-style: italic; color: var(--stone); margin-top: 1rem; }
-    .footer-col .eyebrow { color: var(--stone); margin-bottom: 1rem; }
-    .footer-col address, .footer-col p { font-style: normal; font-size: 0.875rem; line-height: 1.8; color: rgba(244,240,232,0.6); }
-    .footer-col a { display: block; font-size: 0.875rem; color: rgba(244,240,232,0.6); margin-bottom: 0.5rem; transition: color var(--dur-micro) var(--ease-primary); }
-    .footer-col a:hover { color: var(--parchment); }
+    .footer-brand p { font-family: var(--font-display); font-size: 1.1rem; color: rgba(255,255,255,0.5); margin-top: 1rem; }
+    .footer-col .eyebrow { margin-bottom: 1rem; }
+    .footer-col address, .footer-col p { font-style: normal; font-size: 0.875rem; line-height: 1.8; color: rgba(255,255,255,0.6); }
+    .footer-col a { display: block; font-size: 0.875rem; color: rgba(255,255,255,0.6); margin-bottom: 0.5rem; transition: color var(--dur-micro) var(--ease-primary); }
+    .footer-col a:hover { color: var(--paper); }
     .footer-social { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
     .footer-bottom { padding-top: 1.5rem; }
-    .caption { font-size: 0.75rem; color: var(--stone); }
-    @media (max-width: 768px) {
-      .footer-grid { grid-template-columns: 1fr; }
-    }
+    .caption { font-size: 0.75rem; color: rgba(255,255,255,0.4); }
+    @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr; } }
   </style>
 
   <script>
-    // Nav scroll behavior — dark hero detection
-    const nav = document.getElementById('site-nav');
-    const isDarkHero = document.body.dataset.hero === 'dark';
-    const solidState = () => window.scrollY > 60 || !isDarkHero;
-
-    function updateNav() {
-      nav.classList.toggle('scrolled', solidState());
-    }
-    updateNav();
-    window.addEventListener('scroll', updateNav, { passive: true });
-
-    // Mobile menu
     const toggle = document.querySelector('.nav-toggle');
     const links = document.querySelector('.nav-links');
     toggle?.addEventListener('click', () => {
@@ -358,7 +279,6 @@ const {
       links.classList.toggle('open');
     });
 
-    // Intersection observer for reveal animations
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
