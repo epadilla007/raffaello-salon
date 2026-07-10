@@ -14,58 +14,88 @@ import Base from '../layouts/Base.astro';
 
   <section class="gallery-section">
     <div class="container">
-      <div class="gallery-grid">
-        <figure class="gallery-item gallery-item-tall reveal">
-          <img src="/portfolio-doloris.jpg" alt="Editorial colour work, hair by Raffaello, colour by Mellissa Marrello" class="img-gallery img-bw" loading="eager" />
-          <figcaption>Hair: Raffaello. Colour: Mellissa Marrello.</figcaption>
-        </figure>
-        <figure class="gallery-item reveal reveal-delay-1">
-          <img src="/gallery-client-1.jpg" alt="Balayage and blowout at Raffaello Salon" class="img-gallery img-bw" loading="lazy" />
+      <div class="gallery-grid" data-reveal-group>
+        <figure class="gallery-item gallery-item-tall">
+          <div class="img-reveal">
+            <img src="/gallery-client-1.jpg" alt="Balayage and blowout at Raffaello Salon" class="img-gallery" loading="eager" />
+          </div>
           <figcaption>Balayage, finished blowout</figcaption>
         </figure>
-        <figure class="gallery-item reveal reveal-delay-2">
-          <img src="/gallery-indie-4.jpg" alt="Colour and movement at Raffaello Salon" class="img-gallery img-bw" loading="lazy" />
+        <figure class="gallery-item">
+          <div class="img-reveal">
+            <img src="/gallery-indie-4.jpg" alt="Colour and movement at Raffaello Salon" class="img-gallery" loading="lazy" />
+          </div>
           <figcaption>Colour and movement</figcaption>
         </figure>
-        <figure class="gallery-item reveal">
-          <img src="/gallery-nancy-2.jpg" alt="Precision bob, colour detail" class="img-gallery img-bw" loading="lazy" />
+        <figure class="gallery-item">
+          <div class="img-reveal">
+            <img src="/gallery-client-4.jpg" alt="Warm balayage and finished blowout, Raffaello Salon" class="img-gallery" loading="lazy" />
+          </div>
+          <figcaption>Warm balayage, finished style</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <div class="img-reveal">
+            <img src="/gallery-nancy-2.jpg" alt="Precision bob, colour detail" class="img-gallery" loading="lazy" />
+          </div>
           <figcaption>Precision bob, colour detail</figcaption>
         </figure>
-        <figure class="gallery-item reveal reveal-delay-1">
-          <img src="/portfolio-chris-1.jpg" alt="Colour and cut by Christopher Marrello" class="img-gallery img-bw" loading="lazy" />
+        <figure class="gallery-item">
+          <div class="img-reveal">
+            <img src="/portfolio-chris-1.jpg" alt="Colour and cut by Christopher Marrello" class="img-gallery" loading="lazy" />
+          </div>
           <figcaption>Christopher Marrello, in the chair</figcaption>
         </figure>
-        <figure class="gallery-item reveal reveal-delay-2">
-          <img src="/gallery-chris-street.jpg" alt="Finished bob by Christopher Marrello, Yorkville" class="img-gallery img-bw" loading="lazy" />
+        <figure class="gallery-item gallery-item-wide">
+          <div class="img-reveal">
+            <img src="/gallery-indie-1.jpg" alt="Colour movement from behind, Raffaello Salon storefront reflected" class="img-gallery" loading="lazy" />
+          </div>
+          <figcaption>Colour, from behind — Cumberland Street</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <div class="img-reveal">
+            <img src="/gallery-chris-street.jpg" alt="Finished bob by Christopher Marrello, Yorkville" class="img-gallery" loading="lazy" />
+          </div>
           <figcaption>Christopher Marrello, finished work</figcaption>
         </figure>
-        <figure class="gallery-item gallery-item-wide reveal">
-          <img src="/press-trim-cover-1968.webp" alt="TRIM, Canada's Largest Beauty Magazine, 1968" class="img-gallery img-bw" loading="lazy" />
-          <figcaption>From the archive, 1968 &mdash; full story on <a href="/history">History</a></figcaption>
-        </figure>
-        <figure class="gallery-item reveal reveal-delay-1">
-          <img src="/gallery-client-2.jpg" alt="Blowout styling at Raffaello Salon" class="img-gallery img-bw" loading="lazy" />
+        <figure class="gallery-item">
+          <div class="img-reveal">
+            <img src="/gallery-client-2.jpg" alt="Blowout styling at Raffaello Salon" class="img-gallery" loading="lazy" />
+          </div>
           <figcaption>Styling, in progress</figcaption>
         </figure>
-        <figure class="gallery-item reveal reveal-delay-2">
-          <img src="/gallery-client-3.jpg" alt="Finished balayage at Raffaello Salon" class="img-gallery img-bw" loading="lazy" />
+        <figure class="gallery-item">
+          <div class="img-reveal">
+            <img src="/gallery-indie-6.jpg" alt="Finished balayage, Raffaello Salon window light" class="img-gallery" loading="lazy" />
+          </div>
+          <figcaption>Finished balayage, window light</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <div class="img-reveal">
+            <img src="/gallery-client-3.jpg" alt="Finished balayage at Raffaello Salon" class="img-gallery" loading="lazy" />
+          </div>
           <figcaption>Finished balayage</figcaption>
         </figure>
-        <figure class="gallery-item reveal">
-          <img src="/portfolio-chris-2.jpg" alt="Finished blowout by Christopher Marrello" class="img-gallery img-bw" loading="lazy" />
+        <figure class="gallery-item">
+          <div class="img-reveal">
+            <img src="/portfolio-chris-2.jpg" alt="Finished blowout by Christopher Marrello" class="img-gallery" loading="lazy" />
+          </div>
           <figcaption>Movement, finished work</figcaption>
         </figure>
-        <figure class="gallery-item reveal reveal-delay-1">
-          <img src="/gallery-nancy-1.jpg" alt="Client at Raffaello Salon" class="img-gallery img-bw" loading="lazy" />
-          <figcaption>In the chair, Yorkville</figcaption>
+        <figure class="gallery-item gallery-item-wide">
+          <div class="img-reveal">
+            <img src="/gallery-indie-7.jpg" alt="Finished colour and blowout, Raffaello Salon" class="img-gallery" loading="lazy" />
+          </div>
+          <figcaption>Finished colour, full blowout</figcaption>
         </figure>
-        <figure class="gallery-item gallery-item-wide reveal reveal-delay-2">
-          <img src="/spa-treatment.jpg" alt="Spa treatment at Raffaello Salon" class="img-gallery img-bw" loading="lazy" />
-          <figcaption>The spa</figcaption>
+        <figure class="gallery-item">
+          <div class="img-reveal">
+            <img src="/gallery-client-5.jpg" alt="Silver colour and precision bob, Raffaello Salon" class="img-gallery" loading="lazy" />
+          </div>
+          <figcaption>Silver colour, precision bob</figcaption>
         </figure>
       </div>
 
-      <p class="gallery-note reveal">More from the archive on request. Follow <a href="https://instagram.com/raffaellosalon" target="_blank" rel="noopener">@raffaellosalon</a> for current work.</p>
+      <p class="gallery-note reveal">More from the archive on request. Follow <a href="https://instagram.com/raffaellosalon" target="_blank" rel="noopener">@raffaellosalon</a> for current work. For fifty-eight years of history, visit the <a href="/history">History</a> page.</p>
     </div>
   </section>
 
@@ -87,19 +117,21 @@ import Base from '../layouts/Base.astro';
   .gallery-item { position: relative; overflow: hidden; }
   .gallery-item-tall { grid-row: span 2; }
   .gallery-item-wide { grid-column: span 2; }
+  .gallery-item .img-reveal { width: 100%; height: 100%; }
   .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--dur-dramatic) var(--ease-primary); }
-  .gallery-item:hover img { transform: scale(1.03); }
+  .gallery-item:hover img { transform: scale(1.05); }
   .gallery-item figcaption {
     position: absolute; bottom: 0; left: 0; right: 0;
     padding: 1rem 1.25rem;
-    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
     color: var(--paper);
     font-size: 0.75rem;
     letter-spacing: 0.05em;
     opacity: 0;
-    transition: opacity var(--dur-micro) var(--ease-primary);
+    transform: translateY(8px);
+    transition: opacity var(--dur-micro) var(--ease-primary), transform var(--dur-micro) var(--ease-primary);
   }
-  .gallery-item:hover figcaption { opacity: 1; }
+  .gallery-item:hover figcaption { opacity: 1; transform: none; }
   .gallery-item figcaption a { color: var(--paper); text-decoration: underline; }
   .gallery-note { color: var(--graphite); font-size: 0.9rem; }
   .gallery-note a { text-decoration: underline; color: var(--ink); }
@@ -107,5 +139,6 @@ import Base from '../layouts/Base.astro';
     .gallery-grid { grid-template-columns: 1fr 1fr; }
     .gallery-item-wide { grid-column: span 2; }
     .gallery-item-tall { grid-row: span 1; }
+    .gallery-item figcaption { opacity: 1; transform: none; background: linear-gradient(to top, rgba(0,0,0,0.55), transparent); }
   }
 </style>

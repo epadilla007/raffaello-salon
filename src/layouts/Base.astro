@@ -21,6 +21,8 @@ const {
 
   <link rel="preconnect" href="https://api.fontshare.com" />
   <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,500,400&f[]=switzer@400,500,600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js" defer></script>
 
   <style is:global>
     /* === DESIGN TOKENS (v2 — avant-garde minimal, 2026-07-10) === */
@@ -120,7 +122,7 @@ const {
     /* === IMAGES === */
     .img-portrait { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top center; }
     .img-gallery { width: 100%; aspect-ratio: 4/5; object-fit: cover; }
-    .img-bw { filter: saturate(0.15) contrast(1.1); }
+    .img-bw { filter: none; }
 
     /* === HAIRLINE RULE — the single geometric motif === */
     .rule { display: block; width: 40px; height: 1px; background: var(--ink); margin-bottom: 2rem; }
@@ -146,9 +148,27 @@ const {
 
     /* Sharp corners everywhere except the CTA button — deliberate per creative direction */
     img, .card, .price-row { border-radius: 0; }
+
+    /* === SCROLL PROGRESS === */
+    #scroll-progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 2px;
+      width: 0%;
+      background: var(--signal);
+      z-index: 200;
+      transition: width 80ms linear;
+    }
+
+    /* === CINEMATIC IMAGE REVEAL (GSAP-driven, .img-reveal wrapper) === */
+    .img-reveal { overflow: hidden; position: relative; }
+    .img-reveal img { will-change: transform, clip-path; }
   </style>
 </head>
 <body>
+  <!-- SCROLL PROGRESS -->
+  <div id="scroll-progress"></div>
+
   <!-- NAV -->
   <header id="site-nav">
     <nav class="container">
@@ -292,6 +312,76 @@ const {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
     }, { threshold: 0.15 });
     reveals.forEach(el => observer.observe(el));
+
+    // Scroll progress bar
+    const progressBar = document.getElementById('scroll-progress');
+    function updateProgress() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      if (progressBar) progressBar.style.width = pct + '%';
+    }
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+
+    // Magnetic hover on primary buttons — subtle cursor-follow within a radius
+    function initMagnetic() {
+      if (typeof gsap === 'undefined') return;
+      const targets = document.querySelectorAll('.btn-primary, .nav-cta');
+      targets.forEach((el) => {
+        const moveX = gsap.quickTo(el, 'x', { duration: 0.35, ease: 'power3.out' });
+        const moveY = gsap.quickTo(el, 'y', { duration: 0.35, ease: 'power3.out' });
+        el.addEventListener('mousemove', (e) => {
+          const rect = el.getBoundingClientRect();
+          const relX = e.clientX - rect.left - rect.width / 2;
+          const relY = e.clientY - rect.top - rect.height / 2;
+          moveX(relX * 0.25);
+          moveY(relY * 0.25);
+        });
+        el.addEventListener('mouseleave', () => { moveX(0); moveY(0); });
+      });
+    }
+
+    // Cinematic image reveal — clip-path + scale on scroll entry, staggered per container
+    function initImageReveal() {
+      if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+      gsap.registerPlugin(ScrollTrigger);
+      const groups = document.querySelectorAll('[data-reveal-group]');
+      groups.forEach((group) => {
+        const imgs = group.querySelectorAll('.img-reveal img');
+        gsap.fromTo(imgs,
+          { clipPath: 'inset(100% 0 0 0)', scale: 1.12 },
+          {
+            clipPath: 'inset(0% 0 0 0)',
+            scale: 1,
+            duration: 1.1,
+            ease: 'power3.out',
+            stagger: 0.09,
+            scrollTrigger: { trigger: group, start: 'top 82%' }
+          }
+        );
+      });
+      // Fallback for any .img-reveal not in a data-reveal-group
+      document.querySelectorAll('.img-reveal:not([data-reveal-group] .img-reveal)').forEach((wrap) => {
+        const img = wrap.querySelector('img');
+        if (!img) return;
+        gsap.fromTo(img,
+          { clipPath: 'inset(100% 0 0 0)', scale: 1.12 },
+          {
+            clipPath: 'inset(0% 0 0 0)',
+            scale: 1,
+            duration: 1.1,
+            ease: 'power3.out',
+            scrollTrigger: { trigger: wrap, start: 'top 85%' }
+          }
+        );
+      });
+    }
+
+    window.addEventListener('load', () => {
+      initMagnetic();
+      initImageReveal();
+    });
   </script>
 </body>
 </html>
