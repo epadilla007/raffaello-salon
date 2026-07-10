@@ -115,6 +115,7 @@ import Base from '../layouts/Base.astro';
         <div class="press-right reveal reveal-delay-1">
           <img src="/press-trim-cover-1968.webp" alt="TRIM, Canada's Largest Beauty Magazine, archival cover" class="press-archival-img" loading="lazy" />
           <p class="press-caption">From the archive, 1968.</p>
+          <a href="/history" class="press-history-link">Fifty-eight years, decade by decade &rarr;</a>
         </div>
       </div>
     </div>
@@ -245,6 +246,17 @@ import Base from '../layouts/Base.astro';
   .press-right { align-self: start; }
   .press-archival-img { width: 100%; filter: sepia(0.15) contrast(1.05); }
   .press-caption { font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-top: 0.75rem; letter-spacing: 0.05em; }
+  .press-history-link {
+    display: inline-block;
+    margin-top: 1.25rem;
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    color: var(--paper);
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    padding-bottom: 2px;
+    transition: opacity var(--dur-micro) var(--ease-primary);
+  }
+  .press-history-link:hover { opacity: 0.7; }
   @media (max-width: 900px) { .press-layout { grid-template-columns: 1fr; gap: 2.5rem; } }
   .press-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; margin-bottom: 4.5rem; max-width: 640px; }
   .press-list li { font-size: 1rem; color: rgba(255,255,255,0.75); padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); }

@@ -1,0 +1,341 @@
+---
+export const prerender = true;
+import Base from '../layouts/Base.astro';
+
+const decades = [
+  {
+    id: 'sixties',
+    label: '60s',
+    years: '1960–1969',
+    headline: 'A boy from Italy, twelve years old, standing in front of the Mona Lisa.',
+    copy: "Raffaello came to Canada with his family at 12. Painting came first — oil on canvas, the Streets of San Francisco, a first commission from a deer hunter's sporting goods store before he was a teenager. His father wanted otherwise: on his deathbed at 92, he confessed that his brother had warned him not to let Raffaello become an artist, artists don't make money, send him to beauty school instead. He went at 16. By 19 he was the youngest Provincial Hairdressing Champion in Ontario's history, a record that still stands. In 1968, at 21, he opened his own salon in Yorkville.",
+    images: [
+      { src: '/history/60s-1-trim1968.jpg', alt: 'TRIM, Canada’s Largest Beauty Magazine, June 1968, The Bonnie & Clyde Kick', caption: 'TRIM Magazine, June 1968' },
+      { src: '/history/60s-3-ibs1964.jpg', alt: 'International Beauty Show, New York Hilton, 1964', caption: 'International Beauty Show, NY Hilton, 1964' },
+      { src: '/history/60s-4-competition1964.jpg', alt: 'Hairdressing competition, 1964', caption: 'Competition circuit, 1964' },
+      { src: '/history/60s-2-bonnieclyde.jpg', alt: 'The Bonnie & Clyde Kick, TRIM Magazine cover story, 1968', caption: 'The Bonnie & Clyde Kick, 1968' },
+    ],
+  },
+  {
+    id: 'seventies',
+    label: '70s',
+    years: '1970–1979',
+    headline: 'A system, invented from nothing.',
+    copy: 'The Universal MDXS System, Raffaello’s own cutting method, was designed and first shown in 1970. Gesture Cutting, Free Form, Fractal, Baling, Strolling, Fan, Entropy, Chaos Cutting followed in the years after, ten original techniques over five decades, most of them born in this stretch. The salon was young. The work was already unmistakably his.',
+    images: [
+      { src: '/history/70s-4-mdxs.jpeg', alt: 'The MDXS System, 1970, designed by Raffaello Marrello', caption: 'The MDXS System, 1970' },
+      { src: '/history/70s-1-raff1970.jpg', alt: 'Raffaello, 1970', caption: 'Raffaello, 1970' },
+      { src: '/history/70s-2-raff1971.jpg', alt: 'Raffaello, 1971', caption: 'Raffaello, 1971' },
+      { src: '/history/70s-3-model1977.jpg', alt: 'Editorial work, 1977', caption: 'Editorial work, 1977' },
+    ],
+  },
+  {
+    id: 'eighties',
+    label: '80s',
+    years: '1980–1989',
+    headline: 'Fifteen years in, and still cutting like it was the first day.',
+    copy: 'The reputation kept building through the eighties, editorial sittings, repeat clients who’d follow him decade over decade, the same restless standard applied to every head in the chair. It set up the next stretch, when the work would leave Toronto and start showing up in magazines most Canadian stylists never see the inside of.',
+    images: [
+      { src: '/history/80s-2-model1982.jpg', alt: 'Editorial work, 1982', caption: '1982' },
+      { src: '/history/80s-3-caroline.jpg', alt: 'Caroline, 1980s', caption: 'Caroline, 1980s' },
+      { src: '/history/80s-1.jpg', alt: 'Editorial work, 1980s', caption: 'Mid-1980s' },
+    ],
+  },
+  {
+    id: 'nineties',
+    label: '90s',
+    years: '1990–1999',
+    headline: 'Japan’s Passion Magazine features four international hairstylists a year. Raffaello is the only Canadian ever chosen.',
+    copy: "Spain's Peluquerias Magazine ran him on the cover with a six-page editorial. Coiffure de Paris featured his work. His client list read like a call sheet: Helena Bonham Carter for The Wings of the Dove, Roberto Benigni for Life Is Beautiful, Faye Dunaway, Joan Rivers, Sandra Bernhard, James Cameron, Minnie Driver, Liv Ullmann. And in 1994, at the Royal York's Imperial Room, in front of the industry's peers, Raffaello presented his own bronze, gold-plated sculpture, “Power At Hand,” as a tribute to Vidal Sassoon. Joan Harrison, President of Canadian Hairdresser International, bought it and donated it back as the Lifetime Achievement Award gift. Raffaello gave the speech. Sassoon, vacationing in Mexico, had his secretary call ahead just to say the speech had brought him to tears. He sent Raffaello a signed book. Full circle, in his own words: not just a hairdresser.",
+    images: [
+      { src: '/history/90s-2-passion-profile.jpg', alt: 'Passion Magazine profile of Raffaello Marrello', caption: 'Passion Magazine, Japan' },
+      { src: '/history/90s-1-peluquerias-cover.jpg', alt: 'Peluquerias Magazine cover, 1991-92, featuring Raffaello’s work', caption: 'Peluquerias Magazine cover' },
+      { src: '/history/90s-4-coiffure-paris.jpg', alt: 'Coiffure de Paris, October 1992', caption: 'Coiffure de Paris, Oct. 1992' },
+      { src: '/history/90s-3-sandra-bernhard.jpg', alt: 'Raffaello with client Sandra Bernhard', caption: 'With Sandra Bernhard' },
+    ],
+  },
+  {
+    id: 'aughts',
+    label: '00s',
+    years: '2000–2009',
+    headline: 'The next generation starts showing up in the chair beside him.',
+    copy: 'Awards nights, editorial shoots, and Christopher—Raffaello’s son—beginning to build his own name inside the same walls. The salon’s second act, quietly, was already underway.',
+    images: [
+      { src: '/history/00s-1-mirror-awards.jpg', alt: 'Mirror Awards, industry recognition', caption: 'Mirror Awards' },
+      { src: '/history/00s-2-chris-model.jpg', alt: 'Christopher Marrello editorial work', caption: 'Christopher, editorial work' },
+      { src: '/history/00s-3-salon.jpg', alt: 'Raffaello Salon, Yorkville', caption: 'The salon, Yorkville' },
+    ],
+  },
+  {
+    id: 'twenty-tens',
+    label: '2010s',
+    years: '2010–2019',
+    headline: 'Christopher steps into Creative Director. Mellissa joins as Colour Director.',
+    copy: "Three generations, one family, the same address. Christopher's modern eye and stage experience, Mellissa's dimensional colour work, both trained under Raffaello and both building on the Italian technique he brought over as a boy. The salon that opened in 1968 was, fifty years later, still entirely a family business.",
+    images: [
+      { src: '/history/2010s-1-katerina.jpg', alt: 'Editorial colour work, 2010s', caption: 'Colour work, 2010s' },
+      { src: '/history/2010s-2-chris-clientx.jpg', alt: 'Christopher Marrello client work', caption: 'Christopher, client work' },
+    ],
+  },
+];
+---
+<Base title="History" description="Fifty-eight years of Raffaello Salon, decade by decade — from a 21-year-old's first salon in Yorkville to three generations of the Marrello family.">
+
+  <div class="page-header section-ink">
+    <div class="container">
+      <span class="eyebrow reveal">Since 1968</span>
+      <h1 class="reveal reveal-delay-1">The History.</h1>
+      <p class="header-sub reveal reveal-delay-2">Fifty-eight years. One family. Told decade by decade.</p>
+    </div>
+  </div>
+
+  <nav class="decade-nav" aria-label="Jump to decade">
+    <div class="decade-nav-inner">
+      {decades.map((d) => (
+        <a href={`#${d.id}`} class="decade-nav-link" data-decade={d.id}>{d.label}</a>
+      ))}
+      <a href="#today" class="decade-nav-link" data-decade="today">Today</a>
+    </div>
+  </nav>
+
+  {decades.map((decade, i) => (
+    <section class="decade-section" id={decade.id} data-decade={decade.id}>
+      <div class="container">
+        <div class="decade-grid">
+          <div class="decade-marker">
+            <span class="decade-number reveal">{decade.label}</span>
+            <span class="decade-years reveal reveal-delay-1">{decade.years}</span>
+          </div>
+          <div class="decade-text">
+            <h2 class="decade-headline reveal">{decade.headline}</h2>
+            <p class="decade-copy reveal reveal-delay-1">{decade.copy}</p>
+          </div>
+        </div>
+
+        <div class="decade-filmstrip reveal reveal-delay-2">
+          {decade.images.map((img) => (
+            <figure class="filmstrip-item">
+              <img src={img.src} alt={img.alt} class="img-gallery img-bw" loading="lazy" />
+              <figcaption>{img.caption}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- SASSOON SPOTLIGHT -->
+  <section class="spotlight section-ink">
+    <div class="container">
+      <span class="eyebrow reveal">1994 &mdash; Royal York Imperial Room</span>
+      <h2 class="reveal reveal-delay-1">&ldquo;Power At Hand.&rdquo;</h2>
+      <div class="spotlight-grid">
+        <div class="spotlight-text reveal reveal-delay-2">
+          <p>Raffaello cast a sculpture in bronze, gold-plated, and called it <em>Power At Hand</em>. He presented it as a tribute to Vidal Sassoon, in front of the industry's peers, at a night nobody in that room forgot. Joan Harrison, President of Canadian Hairdresser International, bought the piece back from him and donated it as the gift for Sassoon's Lifetime Achievement Award. Raffaello gave the speech.</p>
+          <p>Sassoon was vacationing in Mexico when he had his secretary call ahead, just to say that the speech had brought him to tears of joy. He sent Raffaello his own book, signed, with his thanks.</p>
+        </div>
+        <div class="spotlight-images">
+          <img src="/history/sassoon-1.jpeg" alt="Raffaello and Vidal Sassoon embrace at the tribute event, 1994" class="img-gallery img-bw reveal" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TODAY -->
+  <section class="decade-section decade-today" id="today" data-decade="today">
+    <div class="container">
+      <div class="decade-grid">
+        <div class="decade-marker">
+          <span class="decade-number reveal">Now</span>
+          <span class="decade-years reveal reveal-delay-1">2020s &mdash; Today</span>
+        </div>
+        <div class="decade-text">
+          <h2 class="decade-headline reveal">Fifty-eight years later, he is still cutting.</h2>
+          <p class="decade-copy reveal reveal-delay-1">Christopher runs the creative direction. Mellissa runs the colour bar. Raffaello is still in the chair, most days, at 132 Cumberland Street, the same neighbourhood he opened in at 21. The techniques he invented are still the ones the salon teaches. See the current work in the <a href="/gallery">Gallery</a>, or meet the family on the <a href="/team">Team</a> page.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="history-cta section-ink">
+    <div class="container">
+      <h2 class="reveal">Fifty-eight years.<br />One chair, still open.</h2>
+      <a href="/contact" class="btn btn-primary reveal reveal-delay-1">Book Appointment</a>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  .page-header { padding: 10rem 0 5rem; }
+  .page-header .eyebrow { display: block; margin-bottom: 1.5rem; }
+  .header-sub { font-family: var(--font-display); font-size: 1.125rem; color: rgba(255,255,255,0.55); max-width: none; }
+
+  /* Sticky decade nav — museum wayfinding */
+  .decade-nav {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: var(--paper);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+  }
+  .decade-nav-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 clamp(1.5rem, 4vw, 3rem);
+    display: flex;
+    gap: clamp(1rem, 3vw, 2.25rem);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .decade-nav-inner::-webkit-scrollbar { display: none; }
+  .decade-nav-link {
+    flex: 0 0 auto;
+    padding: 1rem 0;
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--graphite);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: color var(--dur-micro) var(--ease-primary), border-color var(--dur-micro) var(--ease-primary);
+    white-space: nowrap;
+  }
+  .decade-nav-link:hover,
+  .decade-nav-link.is-active {
+    color: var(--ink);
+    border-bottom-color: var(--signal);
+  }
+
+  /* Decade sections */
+  .decade-section {
+    padding: clamp(4.5rem, 9vw, 8rem) 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  .decade-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: clamp(2rem, 6vw, 5rem);
+    align-items: start;
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  }
+  .decade-marker {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 5rem;
+  }
+  .decade-number {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(3.5rem, 9vw, 7rem);
+    line-height: 0.9;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+  .decade-years {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    color: var(--graphite);
+    margin-top: 0.75rem;
+  }
+  .decade-headline {
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    line-height: 1.25;
+    margin-bottom: 1.5rem;
+    max-width: 780px;
+  }
+  .decade-copy {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--graphite);
+    max-width: 680px;
+  }
+  .decade-copy em { color: var(--ink); font-style: italic; }
+
+  /* Filmstrip — horizontal scroll-snap, walking a gallery wall */
+  .decade-filmstrip {
+    display: flex;
+    gap: 1.25rem;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    padding-bottom: 0.5rem;
+    scrollbar-width: thin;
+  }
+  .filmstrip-item {
+    flex: 0 0 auto;
+    width: clamp(220px, 28vw, 340px);
+    scroll-snap-align: start;
+  }
+  .filmstrip-item img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    display: block;
+  }
+  .filmstrip-item figcaption {
+    margin-top: 0.6rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.03em;
+    color: var(--graphite);
+  }
+
+  @media (max-width: 900px) {
+    .decade-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .decade-marker { position: static; flex-direction: row; align-items: baseline; gap: 1rem; }
+  }
+
+  /* Sassoon spotlight */
+  .spotlight { padding: clamp(4.5rem, 9vw, 8rem) 0; }
+  .spotlight .eyebrow { display: block; margin-bottom: 1.5rem; color: rgba(255,255,255,0.55); }
+  .spotlight h2 { margin-bottom: 2.5rem; font-size: clamp(2rem, 4vw, 3rem); }
+  .spotlight-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+  }
+  .spotlight-text p {
+    color: rgba(255,255,255,0.75);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+  .spotlight-images img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+  }
+  @media (max-width: 900px) {
+    .spotlight-grid { grid-template-columns: 1fr; }
+  }
+
+  .decade-today { border-bottom: none; }
+  .decade-today .decade-copy a { color: var(--ink); text-decoration: underline; }
+
+  .history-cta { text-align: center; padding: clamp(4rem, 8vw, 6rem) 0; }
+  .history-cta h2 { margin-bottom: 2.5rem; }
+</style>
+
+<script>
+  const links = document.querySelectorAll<HTMLAnchorElement>('.decade-nav-link');
+  const sections = document.querySelectorAll<HTMLElement>('[data-decade]');
+
+  const setActive = (id: string | null) => {
+    links.forEach((l) => l.classList.toggle('is-active', l.dataset.decade === id));
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visible = entries.filter((e) => e.isIntersecting);
+      if (visible.length > 0) {
+        const top = visible.reduce((a, b) => (a.intersectionRatio > b.intersectionRatio ? a : b));
+        setActive((top.target as HTMLElement).dataset.decade ?? null);
+      }
+    },
+    { rootMargin: '-15% 0px -60% 0px', threshold: [0, 0.25, 0.5, 0.75, 1] }
+  );
+
+  sections.forEach((s) => observer.observe(s));
+</script>

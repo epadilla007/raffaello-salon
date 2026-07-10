@@ -2,13 +2,13 @@
 export const prerender = true;
 import Base from '../layouts/Base.astro';
 ---
-<Base title="Gallery" description="A selection of the work at Raffaello Salon, Yorkville, Toronto.">
+<Base title="Gallery" description="The best recent work at Raffaello Salon, Yorkville, Toronto — colour, cutting, and finished style.">
 
   <div class="page-header section-ink">
     <div class="container">
-      <span class="eyebrow reveal">Since 1968</span>
+      <span class="eyebrow reveal">Recent Work</span>
       <h1 class="reveal reveal-delay-1">The Gallery.</h1>
-      <p class="header-sub reveal reveal-delay-2">A selection of the work. Archive and present.</p>
+      <p class="header-sub reveal reveal-delay-2">This is the work happening now. For fifty-eight years of it, see the <a href="/history">History</a>.</p>
     </div>
   </div>
 
@@ -16,34 +16,50 @@ import Base from '../layouts/Base.astro';
     <div class="container">
       <div class="gallery-grid">
         <figure class="gallery-item gallery-item-tall reveal">
-          <img src="/portfolio-doloris.jpg" alt="Editorial colour work, hair by Raffaello, colour by Mellissa Marrello" class="img-gallery img-bw" loading="lazy" />
-          <figcaption>Hair: Raffaello. Colour: Mellissa Marrello. Photo: Raffaello.</figcaption>
+          <img src="/portfolio-doloris.jpg" alt="Editorial colour work, hair by Raffaello, colour by Mellissa Marrello" class="img-gallery img-bw" loading="eager" />
+          <figcaption>Hair: Raffaello. Colour: Mellissa Marrello.</figcaption>
         </figure>
         <figure class="gallery-item reveal reveal-delay-1">
-          <img src="/portfolio-indie-1.jpg" alt="Balayage and blowout at Raffaello Salon" class="img-gallery img-bw" loading="lazy" />
-          <figcaption>In the chair, Yorkville</figcaption>
+          <img src="/gallery-client-1.jpg" alt="Balayage and blowout at Raffaello Salon" class="img-gallery img-bw" loading="lazy" />
+          <figcaption>Balayage, finished blowout</figcaption>
         </figure>
         <figure class="gallery-item reveal reveal-delay-2">
-          <img src="/portfolio-client-1.jpg" alt="Finished colour and style at Raffaello Salon" class="img-gallery img-bw" loading="lazy" />
-          <figcaption>Finished work</figcaption>
+          <img src="/gallery-indie-4.jpg" alt="Colour and movement at Raffaello Salon" class="img-gallery img-bw" loading="lazy" />
+          <figcaption>Colour and movement</figcaption>
         </figure>
         <figure class="gallery-item reveal">
-          <img src="/press-trim-cover-1968.webp" alt="TRIM, Canada's Largest Beauty Magazine, 1968" class="img-gallery img-bw" loading="lazy" />
-          <figcaption>From the archive, 1968</figcaption>
+          <img src="/gallery-nancy-2.jpg" alt="Precision bob, colour detail" class="img-gallery img-bw" loading="lazy" />
+          <figcaption>Precision bob, colour detail</figcaption>
         </figure>
         <figure class="gallery-item reveal reveal-delay-1">
-          <img src="/portfolio-indie-2.jpg" alt="Blowout styling at Raffaello Salon" class="img-gallery img-bw" loading="lazy" />
+          <img src="/portfolio-chris-1.jpg" alt="Colour and cut by Christopher Marrello" class="img-gallery img-bw" loading="lazy" />
+          <figcaption>Christopher Marrello, in the chair</figcaption>
+        </figure>
+        <figure class="gallery-item reveal reveal-delay-2">
+          <img src="/gallery-chris-street.jpg" alt="Finished bob by Christopher Marrello, Yorkville" class="img-gallery img-bw" loading="lazy" />
+          <figcaption>Christopher Marrello, finished work</figcaption>
+        </figure>
+        <figure class="gallery-item gallery-item-wide reveal">
+          <img src="/press-trim-cover-1968.webp" alt="TRIM, Canada's Largest Beauty Magazine, 1968" class="img-gallery img-bw" loading="lazy" />
+          <figcaption>From the archive, 1968 &mdash; full story on <a href="/history">History</a></figcaption>
+        </figure>
+        <figure class="gallery-item reveal reveal-delay-1">
+          <img src="/gallery-client-2.jpg" alt="Blowout styling at Raffaello Salon" class="img-gallery img-bw" loading="lazy" />
           <figcaption>Styling, in progress</figcaption>
         </figure>
         <figure class="gallery-item reveal reveal-delay-2">
-          <img src="/portfolio-chris-1.jpg" alt="Colour and cut by Christopher Marrello" class="img-gallery img-bw" loading="lazy" />
-          <figcaption>Christopher Marrello, in the chair</figcaption>
+          <img src="/gallery-client-3.jpg" alt="Finished balayage at Raffaello Salon" class="img-gallery img-bw" loading="lazy" />
+          <figcaption>Finished balayage</figcaption>
         </figure>
         <figure class="gallery-item reveal">
           <img src="/portfolio-chris-2.jpg" alt="Finished blowout by Christopher Marrello" class="img-gallery img-bw" loading="lazy" />
           <figcaption>Movement, finished work</figcaption>
         </figure>
-        <figure class="gallery-item gallery-item-wide reveal reveal-delay-1">
+        <figure class="gallery-item reveal reveal-delay-1">
+          <img src="/gallery-nancy-1.jpg" alt="Client at Raffaello Salon" class="img-gallery img-bw" loading="lazy" />
+          <figcaption>In the chair, Yorkville</figcaption>
+        </figure>
+        <figure class="gallery-item gallery-item-wide reveal reveal-delay-2">
           <img src="/spa-treatment.jpg" alt="Spa treatment at Raffaello Salon" class="img-gallery img-bw" loading="lazy" />
           <figcaption>The spa</figcaption>
         </figure>
@@ -59,6 +75,7 @@ import Base from '../layouts/Base.astro';
   .page-header { padding: 10rem 0 5rem; }
   .page-header .eyebrow { display: block; margin-bottom: 1.5rem; }
   .header-sub { font-family: var(--font-display); font-size: 1.125rem; color: rgba(255,255,255,0.55); max-width: none; }
+  .header-sub a { color: var(--paper); text-decoration: underline; }
 
   .gallery-section { padding: clamp(4rem, 8vw, 7.5rem) 0; }
   .gallery-grid {
@@ -83,6 +100,7 @@ import Base from '../layouts/Base.astro';
     transition: opacity var(--dur-micro) var(--ease-primary);
   }
   .gallery-item:hover figcaption { opacity: 1; }
+  .gallery-item figcaption a { color: var(--paper); text-decoration: underline; }
   .gallery-note { color: var(--graphite); font-size: 0.9rem; }
   .gallery-note a { text-decoration: underline; color: var(--ink); }
   @media (max-width: 768px) {
