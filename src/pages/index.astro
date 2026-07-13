@@ -12,7 +12,7 @@ import Base from '../layouts/Base.astro';
     </div>
     <div class="container hero-content">
       <span class="eyebrow reveal">Yorkville, Toronto</span>
-      <h1 class="reveal reveal-delay-1" id="hero-headline">Fifty-eight years<br />of Raffaello.</h1>
+      <h1 class="reveal reveal-delay-1" id="hero-headline">Fifty-eight years of Raffaello.</h1>
       <p class="hero-sub reveal reveal-delay-2">132 Cumberland Street. Since 1968.</p>
       <div class="hero-actions reveal reveal-delay-3">
         <a href="/contact" class="btn btn-primary">Book Appointment</a>
@@ -325,7 +325,7 @@ import Base from '../layouts/Base.astro';
   if (headline) {
     const text = headline.textContent || '';
     headline.innerHTML = text.split('').map(char =>
-      `<span class="char" style="display:inline-block;opacity:0;transform:translateY(20px)">${char === ' ' ? '&nbsp;' : char}</span>`
+      char === ' ' ? ' ' : `<span class="char" style="display:inline-block;opacity:0;transform:translateY(20px)">${char}</span>`
     ).join('');
     const chars = headline.querySelectorAll('.char');
     chars.forEach((char, i) => {
