@@ -324,9 +324,11 @@ import Base from '../layouts/Base.astro';
   const headline = document.getElementById('hero-headline');
   if (headline) {
     const text = headline.textContent || '';
-    headline.innerHTML = text.split('').map(char =>
-      char === ' ' ? ' ' : `<span class="char" style="display:inline-block;opacity:0;transform:translateY(20px)">${char}</span>`
-    ).join('');
+    headline.innerHTML = text.split(' ').map(word =>
+      `<span style="display:inline-block; white-space:nowrap;">${word.split('').map(char =>
+        `<span class="char" style="display:inline-block;opacity:0;transform:translateY(20px)">${char}</span>`
+      ).join('')}</span>`
+    ).join(' ');
     const chars = headline.querySelectorAll('.char');
     chars.forEach((char, i) => {
       setTimeout(() => {
