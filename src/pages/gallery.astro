@@ -3,7 +3,6 @@ export const prerender = true;
 import Base from '../layouts/Base.astro';
 ---
 <Base title="Gallery" description="The best recent work at Raffaello Salon, Yorkville, Toronto — colour, cutting, and finished style.">
-
   <div class="page-header section-ink">
     <div class="container">
       <span class="eyebrow reveal">Recent Work</span>
@@ -11,7 +10,6 @@ import Base from '../layouts/Base.astro';
       <p class="header-sub reveal reveal-delay-2">This is the work happening now. For fifty-eight years of it, see the <a href="/history">History</a>.</p>
     </div>
   </div>
-
   <section class="gallery-section">
     <div class="container">
       <div class="gallery-grid" data-reveal-group>
@@ -93,12 +91,52 @@ import Base from '../layouts/Base.astro';
           </div>
           <figcaption>Silver colour, precision bob</figcaption>
         </figure>
+        <figure class="gallery-item">
+          <div class="img-reveal">
+            <img src="/gallery-indie-2.jpg" alt="Blonde balayage from behind, Raffaello Salon storefront window" class="img-gallery" loading="lazy" />
+          </div>
+          <figcaption>Blonde balayage, from behind</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <div class="img-reveal">
+            <img src="/gallery-indie-3.jpg" alt="Soft finished waves, profile, Raffaello Salon storefront window" class="img-gallery" loading="lazy" />
+          </div>
+          <figcaption>Soft waves, storefront light</figcaption>
+        </figure>
+        <figure class="gallery-item gallery-item-tall">
+          <div class="img-reveal">
+            <img src="/gallery-indie-5.jpg" alt="Full volume finished blowout, close portrait, Raffaello Salon" class="img-gallery" loading="lazy" />
+          </div>
+          <figcaption>Volume and dimension, finished blowout</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <div class="img-reveal">
+            <img src="/gallery-client-6.jpg" alt="Caramel balayage from behind, Raffaello Salon" class="img-gallery" loading="lazy" />
+          </div>
+          <figcaption>Caramel balayage, from behind</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <div class="img-reveal">
+            <img src="/gallery-indie-8.jpg" alt="Golden blonde soft waves, Raffaello Salon" class="img-gallery" loading="lazy" />
+          </div>
+          <figcaption>Golden blonde, soft glam waves</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <div class="img-reveal">
+            <img src="/gallery-indie-9.jpg" alt="Golden blonde full volume finish, Raffaello Salon" class="img-gallery" loading="lazy" />
+          </div>
+          <figcaption>Golden blonde, full volume</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <div class="img-reveal">
+            <img src="/gallery-indie-10.jpg" alt="Golden blonde finished blowout, smiling, Raffaello Salon" class="img-gallery" loading="lazy" />
+          </div>
+          <figcaption>Golden blonde, finished blowout</figcaption>
+        </figure>
       </div>
-
       <p class="gallery-note reveal">More from the archive on request. Follow <a href="https://instagram.com/raffaellosalon" target="_blank" rel="noopener">@raffaellosalon</a> for current work. For fifty-eight years of history, visit the <a href="/history">History</a> page.</p>
     </div>
   </section>
-
 </Base>
 
 <style>
@@ -106,7 +144,6 @@ import Base from '../layouts/Base.astro';
   .page-header .eyebrow { display: block; margin-bottom: 1.5rem; }
   .header-sub { font-family: var(--font-display); font-size: 1.125rem; color: rgba(255,255,255,0.55); max-width: none; }
   .header-sub a { color: var(--paper); text-decoration: underline; }
-
   .gallery-section { padding: clamp(4rem, 8vw, 7.5rem) 0; }
   .gallery-grid {
     display: grid;
